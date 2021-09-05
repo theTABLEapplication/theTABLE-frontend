@@ -13,3 +13,6 @@ theTABLE is an app that allows you to track the restaurants you have gone to and
 
 ## Change Log
 
+## Domain Model
+
+![domainmodel](./img/DomainModel.png)
