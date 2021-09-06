@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class Header extends Component {
   render() {
     return(
-      <Navbar>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand>theTABLE</Navbar.Brand>
         <NavItem><Link to="/" className="nav-link">Home</Link></NavItem>
         <NavItem><Link to="/checkin" className="nav-link">Check-In</Link></NavItem>

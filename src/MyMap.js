@@ -2,9 +2,9 @@ import {Component} from 'react';
 
 class MyMap extends Component {
   render(){
-    return{
-
-    };
+    return(
+      <div>Map Coming Soon...</div>
+    );
   }
 }
 
