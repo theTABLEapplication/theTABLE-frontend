@@ -17,6 +17,10 @@ theTABLE is an app that allows you to track the restaurants you have gone to and
 
 ![domainmodel](./img/DomainModel.png)
 
+## Wireframe
+
+![wireframe](./img/wireframe.png)
+
 ## User Stories
 
 ### LOGIN FEATURE
