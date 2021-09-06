@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { withAuth0 } from '@auth0/auth0-react';
 
 import Header from './Header';
+import Footer from './Footer';
+import Feed from './Feed';
 import Checkin from './Checkin';
 import MyMap from './MyMap';
 import Profile from './Profile';
-import LoginButton from './LoginButton';
+import Login from './Login';
 
 import './App.css';
 
@@ -18,13 +20,20 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path="/">
-              {this.props.auth0.isAuthenticated ? <Feed /> : <LoginButton />}
+              {this.props.auth0.isAuthenticated ? <Feed /> : <Login />}
             </Route>
-            <Route path="/checkin" component={Checkin} />
-            <Route path="/mymap" component={MyMap} />
-            <Route path="/profile" component={Profile} />
+            <Route path="/checkin">
+              <Checkin />
+            </Route>
+            <Route path="/mymap">
+              <MyMap />
+            </Route>
+            <Route path="/profile">
+              <Profile />
+            </Route>
           </Switch>
-        </Router>
+          <Footer />
+        </Router> 
       </>
     );
   }

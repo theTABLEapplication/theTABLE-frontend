@@ -2,9 +2,9 @@ import {Component} from 'react';
 
 class Checkin extends Component {
   render(){
-    return{
-
-    };
+    return(
+      <div>Coming Soon...</div>
+    );
   }
 }
 
