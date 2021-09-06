@@ -20,7 +20,9 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path="/">
-              {this.props.auth0.isAuthenticated ? <Feed /> : <Login />}
+              {this.props.auth0.isAuthenticated ?
+                <Feed />
+                : <Login />}
             </Route>
             <Route path="/checkin">
               <Checkin />
@@ -33,7 +35,7 @@ class App extends Component {
             </Route>
           </Switch>
           <Footer />
-        </Router> 
+        </Router>
       </>
     );
   }
