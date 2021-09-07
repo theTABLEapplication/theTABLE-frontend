@@ -1,15 +1,21 @@
 import { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FavRestaurantForm from "./FavRestaurantForm";
-// import Checkin from "./Checkin";
+import FavRestaurantCards from './FavRestaurantCards';
+// import AddFavDish from "./AddFavDish";
 import AddRestaurant from "./AddRestaurant";
 import Button from "react-bootstrap/Button";
+
+
+// TODO: ADD auth0 to areas we are accessing APIS
+
 
 class Feed extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showAddRestaurantModal: false,
+      favRestaurants: []
     };
   }
 
@@ -28,22 +34,18 @@ class Feed extends Component {
   render() {
     return (
       <>
-        <div>
-          <FavRestaurantForm />
-          {this.state.showAddRestaurantModal ? (
-            <AddRestaurant
-              show={this.state.showAddRestaurantModal}
-              onClose={this.handleCloseAddRestaurantModal}
-            />
-          ) : (
-            <Button onClick={this.handleShowAddRestaurantModal}>
-              Check in to restAURant
-            </Button>
-          )}
-          {/* <Checkin /> */}
-        </div>
-        <div>Feed Coming Soon...</div>
-        <div>{/* <Button>Temporary Button</Button> */}</div>
+        <FavRestaurantForm />
+        {this.state.favRestaurants.length ? <FavRestaurantCards favRestaurants={this.state.favRestaurants}/> : null}
+        {this.state.showAddRestaurantModal ? (
+          <AddRestaurant
+            show={this.state.showAddRestaurantModal}
+            onClose={this.handleCloseAddRestaurantModal}
+          />
+        ) : (
+          <Button onClick={this.handleShowAddRestaurantModal}>
+            Check in to restAURant
+          </Button>
+        )}
       </>
     );
   }

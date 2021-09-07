@@ -2,7 +2,7 @@ import {Component} from 'react';
 import {Form} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
 
-class Checkin extends Component {
+class AddFavDish extends Component {
   render(){
     return(
       <Form>
@@ -28,4 +28,4 @@ class Checkin extends Component {
   }
 }
 
-export default Checkin;
+export default AddFavDish;
