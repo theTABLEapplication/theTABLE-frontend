@@ -5,7 +5,7 @@ import { withAuth0 } from "@auth0/auth0-react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Feed from "./components/Feed";
-import Checkin from "./components/Checkin";
+// import Checkin from "./components/Checkin";
 import MyMap from "./components/MyMap";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
@@ -22,9 +22,10 @@ class App extends Component {
             <Route exact path="/">
               {this.props.auth0.isAuthenticated ? <Feed /> : <Login />}
             </Route>
-            <Route path="/checkin">
+            {/* // TODO: what is CheckIn doing? */}
+            {/* <Route path="/checkin">
               <Checkin />
-            </Route>
+            </Route> */}
             <Route path="/mymap">
               <MyMap />
             </Route>
