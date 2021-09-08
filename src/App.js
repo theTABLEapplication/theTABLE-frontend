@@ -20,7 +20,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path='/'>
-              {this.props.auth0.isAuthenticated ? <Feed /> : <Login />}
+              {this.props.auth0.isAuthenticated ? <Feed /> : <div id="loginPage"><Login /></div>}
             </Route>
             {/* // TODO: what is CheckIn doing? */}
             {/* <Route path='/checkin'>

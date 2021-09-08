@@ -5,6 +5,7 @@ import axios from 'axios';
 import FindRestaurantForm from './FindRestaurantForm';
 import MatchedYelpRestaurants from './MatchedYelpRestaurants';
 import { withAuth0 } from '@auth0/auth0-react';
+import '../css/AddRest.css';
 
 // const server = process.env.REACT_APP_HEROKU_URL;
 const server = 'http://localhost:3001';
@@ -51,7 +52,7 @@ class AddRestaurant extends Component {
       <>
         <Modal show={this.props.show} onHide={this.props.onClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Add A Restaurant</Modal.Title>
+            <Modal.Title id="modalTitle">Add A Restaurant</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {this.state.restaurants.length ? (
@@ -61,7 +62,7 @@ class AddRestaurant extends Component {
             )}
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.props.onClose}>Close</Button>
+            <Button id="modalButton" onClick={this.props.onClose}>Close</Button>
           </Modal.Footer>
         </Modal>
       </>

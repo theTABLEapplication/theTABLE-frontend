@@ -1,0 +1,18 @@
+#profileDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#userProfileName{
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  color: #655C58;
+}
+
+#userEmail{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #9B8567;
+}
