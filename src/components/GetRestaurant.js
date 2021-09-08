@@ -6,10 +6,13 @@ import '../css/FindRestForm.css';
 class FindRestaurantForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
+    let regex = /\s/g;
+    let term = event.target.restaurantName.value.replace(regex, '%20');
     const restaurantInfo = {
-      term: event.target.restaurantName.value,
+      term: term,
       location: event.target.restaurantLocation.value,
     };
+    // alert('hello friends');
     this.props.findRestaurant(restaurantInfo);
   };
 
@@ -26,7 +29,7 @@ class FindRestaurantForm extends Component {
           <Form.Control type='location' placeholder='Enter City, Zip Code, or Address Here' />
         </Form.Group>
         <Button id="findRestButton" type='submit'>
-          Submit
+          hi
         </Button>
       </Form>
     );
