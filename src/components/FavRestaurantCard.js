@@ -1,9 +1,6 @@
 import {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-
-
+import {Col, Card, Button} from 'react-bootstrap';
 
 class FavRestaurantCard extends Component {
 
@@ -14,27 +11,29 @@ class FavRestaurantCard extends Component {
     };
   }
 
-  handleVisitCount = () => {
-    const newvisit = this.state.visitCount + 1;
+  handleVisitCount = (restaurant) => {
+    console.log(restaurant);
     this.setState({
-      visitCount: newvisit
+      visitCount: this.state.visitCount + 1,
     });
+    this.props.onVisit(restaurant, this.state.visitCount);
   }
 
   render() {
     return (
       <Col sm={3}>
-        <Card id="card" onClick={this.handleVisitCount}>
+        <Card key={this.props.key}>
           <Card.Img
             // onClick={}
             variant="top"
-            src={this.props.image_url}
-            alt={this.props.name}
-            title={this.props.name}/>
+            src={this.props.restaurant.image_url}
+            alt={this.props.restaurant.name}
+            title={this.props.restaurant.name}/>
           <Card.Body>
-            <Card.Title>{this.props.name}</Card.Title>
-            <Card.Text>{this.props.description}</Card.Text>
-            <Card.Text id="favoriteCount">{this.state.visitCount}</Card.Text>
+            <Card.Title>{this.props.restaurant.name}</Card.Title>
+            <Card.Text>{this.props.restaurant.description}</Card.Text>
+            <Card.Text class='visitcount'>VISITS: {this.state.visitCount}</Card.Text>
+            <Button onClick={() => this.handleVisitCount(this.props.restaurant)}>VISIT</Button>
           </Card.Body>
         </Card>
       </Col>

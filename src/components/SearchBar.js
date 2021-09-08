@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import '../css/FavRestForm.css';
 
-class FavRestaurantForm extends Component {
+class SearchBar extends Component {
+  onChange = e => {
+    this.props.searchMyRestaurants(e.target.value);
+  }
+
   render() {
     return (
-      <Form id="searchForm">
+      <Form onChange={() => this.onChange} id="searchForm">
         <Form.Group controlId='favoriteRestaurantSearch'>
           <FloatingLabel label="Search Your Favorite Restaurants">
             <Form.Control
@@ -17,12 +21,12 @@ class FavRestaurantForm extends Component {
             ></Form.Control>
           </FloatingLabel>
         </Form.Group>
-        <Button id="searchFavButton" type='submit'>
+        {/* <Button id="searchFavButton" type='submit'>
           Search
-        </Button>{' '}
+        </Button>{' '} */}
       </Form>
     );
   }
 }
 
-export default FavRestaurantForm;
+export default SearchBar;
