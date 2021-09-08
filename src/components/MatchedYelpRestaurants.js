@@ -34,6 +34,8 @@ class MatchedYelpRestaurants extends Component {
         };
         const Server_Response = await axios(config);
         this.setState({ restaurants: Server_Response.data });
+        this.props.onClose();
+        this.props.handleGet();
       })
       .catch((error) => console.error(error));
   }
@@ -47,8 +49,8 @@ class MatchedYelpRestaurants extends Component {
             // <ListGroup.Item action onClick={alertClicked}>
             <ListGroup.Item key={restaurant.id} onClick={() => this.addRestaurant(restaurant)}>
               <div>
-                <p>name: {restaurant.name}</p><br/>
-                <p>location: {restaurant.location.address1}</p>
+                <p>{restaurant.name}</p>
+                <p>{restaurant.location.display_address[0]} {restaurant.location.display_address[1]}</p>
               </div>
               <Button>Select</Button>
             </ListGroup.Item>

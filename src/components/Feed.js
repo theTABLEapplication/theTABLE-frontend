@@ -25,15 +25,13 @@ class Feed extends Component {
       const jwt = res.__raw;
       const config = {
         headers: { Authorization: `Bearer ${jwt}` },
-        method: "get",
+        method: 'get',
         baseURL: server,
-        // confirm what route for this function
-        url: "/restaurants",
+        url: '/favRestaurants',
         params: { email: this.props.auth0.user.email },
       };
       await axios(config).then((response) => {
         this.setState({ favRestaurants: response.data });
-        console.log(this.state.favRestaurants);
       })
         .catch((error) => {
           console.error(error);
@@ -67,15 +65,16 @@ class Feed extends Component {
     }
   }
 
-  onVisit = async (restaurant) => {
+  //TODO: finish this
+  onVisit = async (restaurant, visits) => {
     this.props.auth0.getIdTokenClaims().then(async(res) =>{
       const jwt=res.__raw;
       const config = {
         headers: { Authorization: `Bearer ${jwt}` },
         method: 'put',
-        baseURL: ServiceWorkerRegistration,
-        url: `restaurant/${restaurant._id}`,
-        data: restaurant,
+        baseURL: server,
+        url: `restaurants/${restaurant._id}`,
+        data: {visits},
         params: { email: this.props.auth0.user.email },
       };
       try{
@@ -97,6 +96,7 @@ class Feed extends Component {
           <PostRestaurant
             show={this.state.showAddRestaurantModal}
             onClose={this.handleCloseAddRestaurantModal}
+            handleGet={this.handleGet}
           />
         ) : (
           <div id="checkInButtonDiv">

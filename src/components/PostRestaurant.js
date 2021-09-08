@@ -22,7 +22,7 @@ class PostRestaurant extends Component {
     this.props.auth0
       .getIdTokenClaims()
       .then(async (res) => {
-        this.setState({restaurants: []});
+        this.setState({ restaurants: [] });
         const jwt = res.__raw;
         const config = {
           headers: { Authorization: `Bearer ${jwt}` },
@@ -48,7 +48,10 @@ class PostRestaurant extends Component {
           </Modal.Header>
           <Modal.Body>
             {this.state.restaurants.length ? (
-              <MatchedYelpRestaurants restaurants={this.state.restaurants} />
+              <MatchedYelpRestaurants
+                restaurants={this.state.restaurants}
+                onClose={this.props.onClose}
+                handleGet={this.props.handleGet} />
             ) : (
               <FindRestaurantForm findRestaurant={this.findRestaurant} />
             )}
