@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import '../css/FindRestForm.css';
 
 class FindRestaurantForm extends Component {
   handleSubmit = event => {
@@ -24,7 +25,7 @@ class FindRestaurantForm extends Component {
           <Form.Label>Restaurant Location</Form.Label>
           <Form.Control type='location' placeholder='Enter City, Zip Code, or Address Here' />
         </Form.Group>
-        <Button variant='primary' type='submit'>
+        <Button id="findRestButton" type='submit'>
           Submit
         </Button>
       </Form>

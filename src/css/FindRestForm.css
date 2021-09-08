@@ -1,0 +1,17 @@
+#findRestButton{
+  background-color: #332F2D;
+  color: #A49790;
+  border: #332F2D;
+  margin-top: 6%;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+}
+
+#formGroup{
+  margin-top: 2%;
+  margin-bottom: 6%;
+}

@@ -1,0 +1,13 @@
+#navBarFooter {
+  background-color: #181615;
+  display: flex;
+  justify-content: space-evenly;
+  height: 150px;
+}
+
+#navBarFooterTitle{
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  color: #76736E;
+  
+}

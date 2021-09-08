@@ -1,0 +1,24 @@
+#searchForm{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+#searchFavButton{
+  background-color: #332F2D;
+  color: #A49790;
+  border: #332F2D;
+  margin-left: 6%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+}
+
+#searchRestInput{
+  width:400px;
+}

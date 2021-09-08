@@ -1,0 +1,18 @@
+#modalTitle{
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  color: #76736E;
+}
+
+#modalButton{
+  background-color: #76736E;
+    color:  #332F2D;
+    border: #332F2D;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+

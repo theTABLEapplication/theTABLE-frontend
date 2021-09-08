@@ -5,7 +5,7 @@ import FavRestaurantCards from './FavRestaurantCards';
 // import AddFavDish from './AddFavDish';
 import AddRestaurant from './AddRestaurant';
 import Button from 'react-bootstrap/Button';
-
+import '../css/Feed.css';
 
 // TODO: ADD auth0 to areas we are accessing APIS
 
@@ -33,20 +33,22 @@ class Feed extends Component {
 
   render() {
     return (
-      <>
+      <div id="feedDiv">
         <FavRestaurantForm />
-        {this.state.favRestaurants.length ? <FavRestaurantCards favRestaurants={this.state.favRestaurants}/> : null}
+        {this.state.favRestaurants.length ? <FavRestaurantCards favRestaurants={this.state.favRestaurants} /> : null}
         {this.state.showAddRestaurantModal ? (
           <AddRestaurant
             show={this.state.showAddRestaurantModal}
             onClose={this.handleCloseAddRestaurantModal}
           />
         ) : (
-          <Button onClick={this.handleShowAddRestaurantModal}>
-            Check in to restAURant
-          </Button>
+          <div id="checkInButtonDiv">
+            <Button id="checkInButton" onClick={this.handleShowAddRestaurantModal}>
+              Check-in!
+            </Button>
+          </div>
         )}
-      </>
+      </div>
     );
   }
 }
