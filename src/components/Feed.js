@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FavRestaurantForm from './FavRestaurantForm';
 import FavRestaurantCards from './FavRestaurantCards';
 // import AddFavDish from './AddFavDish';
-import AddRestaurant from './AddRestaurant';
+import PostRestaurant from './PostRestaurant';
 import Button from 'react-bootstrap/Button';
 import '../css/Feed.css';
 
@@ -17,6 +17,10 @@ class Feed extends Component {
       showAddRestaurantModal: false,
       favRestaurants: []
     };
+  }
+
+  componentDidMount = () => {
+    
   }
 
   handleShowAddRestaurantModal = () => {
@@ -37,7 +41,7 @@ class Feed extends Component {
         <FavRestaurantForm />
         {this.state.favRestaurants.length ? <FavRestaurantCards favRestaurants={this.state.favRestaurants} /> : null}
         {this.state.showAddRestaurantModal ? (
-          <AddRestaurant
+          <PostRestaurant
             show={this.state.showAddRestaurantModal}
             onClose={this.handleCloseAddRestaurantModal}
           />
