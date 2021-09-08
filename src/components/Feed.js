@@ -1,10 +1,10 @@
-import { Component } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import FavRestaurantForm from "./FavRestaurantForm";
+import { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import FavRestaurantForm from './FavRestaurantForm';
 import FavRestaurantCards from './FavRestaurantCards';
-// import AddFavDish from "./AddFavDish";
-import AddRestaurant from "./AddRestaurant";
-import Button from "react-bootstrap/Button";
+// import AddFavDish from './AddFavDish';
+import AddRestaurant from './AddRestaurant';
+import Button from 'react-bootstrap/Button';
 
 
 // TODO: ADD auth0 to areas we are accessing APIS

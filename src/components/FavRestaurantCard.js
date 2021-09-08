@@ -25,11 +25,11 @@ class FavRestaurantCard extends Component {
     return (
       <Col sm={3}>
         <Card id="card" onClick={this.handleVisitCount}>
-          <Card.Img 
-            // onClick={} 
-            variant="top" 
-            src={this.props.image_url} 
-            alt={this.props.name} 
+          <Card.Img
+            // onClick={}
+            variant="top"
+            src={this.props.image_url}
+            alt={this.props.name}
             title={this.props.name}/>
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>

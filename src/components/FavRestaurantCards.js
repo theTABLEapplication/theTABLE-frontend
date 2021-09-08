@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import FavRestaurant from "./FavRestaurantCard";
+import React, { Component } from 'react';
+import FavRestaurant from './FavRestaurantCard';
 
 class FavRestaurantCards extends Component {
   render() {
