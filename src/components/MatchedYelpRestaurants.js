@@ -1,7 +1,12 @@
-import React from 'react';
-import ListGroup from 'react-bootstrap/ListGroup';
+import { Component } from 'react';
+import {Button, ListGroup} from 'react-bootstrap/';
 
-class MatchedYelpRestaurants extends React.Component {
+class MatchedYelpRestaurants extends Component {
+
+  addRestaurant = (restaurant) => {
+    console.log('event', restaurant);
+  }
+
   render() {
     return (
       <ListGroup>
@@ -9,9 +14,12 @@ class MatchedYelpRestaurants extends React.Component {
           return (
             //TODO: add function to onClick, confirm how to access restaurant name and address from database.
             // <ListGroup.Item action onClick={alertClicked}>
-            <ListGroup.Item>
-              <p>name: {restaurant.name}</p><br/>
-              <p>location: {restaurant.address}</p>
+            <ListGroup.Item key={restaurant.id}>
+              <div>
+                <p>name: {restaurant.name}</p><br/>
+                <p>location: {restaurant.location.address1}</p>
+              </div>
+              <Button onSubmit={this.addRestaurant(restaurant)}>Select</Button>
             </ListGroup.Item>
           );
         })
