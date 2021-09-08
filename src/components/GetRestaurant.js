@@ -26,7 +26,7 @@ class FindRestaurantForm extends Component {
         </Form.Group>
         <Form.Group controlId='restaurantLocation'>
           <Form.Label>Restaurant Location</Form.Label>
-          <Form.Control type='location' placeholder='Enter City, Zip Code, or Address Here' />
+          <Form.Control type='location' placeholder='Enter Zip Code, or City, State Here' />
         </Form.Group>
         <Button id="findRestButton" type='submit'>
           hi
