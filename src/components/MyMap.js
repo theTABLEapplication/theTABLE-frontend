@@ -7,17 +7,21 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 class MyMap extends Component {
   constructor(props) {
     super(props);
+    const favRestArray = this.props.favRestaurants;
     this.state = {
-      //TODO need to make this dynamic. defaulted to seattle
-      lng: -122.3,
-      lat: 47.6,
-      zoom: 9,
+      lng: favRestArray[favRestArray.length-1].longitude,
+      lat: favRestArray[favRestArray.length-1].latitude,
+      zoom: 12,
     };
     this.mapContainer = React.createRef();
   }
 
   // Used MapBox DOCS to write the code below
   componentDidMount = () => { 
+    this.renderMap();
+  }
+
+  renderMap = () => {
     const { lng, lat, zoom } = this.state;
     const mapBox = new mapboxgl.Map({
       container: this.mapContainer.current,

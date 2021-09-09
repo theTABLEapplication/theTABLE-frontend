@@ -75,15 +75,15 @@ class Feed extends Component {
     });
   };
 
-  searchMyRestaurants(restaurantinput) {
-    let filtered = this.props.favRestaurants.filter(x => x.name === restaurantinput);
-    if (filtered) {
-      this.setState({ favRestaurants: filtered });
-      console.log(this.state.favRestaurants);
-    } else {
-      this.handleGet();
-    }
-  }
+  // searchMyRestaurants(restaurantinput) {
+  //   let filtered = this.props.favRestaurants.filter(x => x.name === restaurantinput);
+  //   if (filtered) {
+  //     this.setState({ favRestaurants: filtered });
+  //     console.log(this.state.favRestaurants);
+  //   } else {
+  //     this.handleGet();
+  //   }
+  // }
 
   onVisit = async (restaurant, visits) => {
     this.props.auth0.getIdTokenClaims().then(async (res) => {
@@ -107,15 +107,18 @@ class Feed extends Component {
     });
   }
 
+
   render() {
     return (
       <div id="feedDiv">
-        {this.state.favRestaurants.length ? <MyMap favRestaurants={this.state.favRestaurants}/> : null}
+        {this.state.favRestaurants.length ? <MyMap favRestaurants={this.state.favRestaurants}
+          handleGet={this.handleGet} /> : null}
         {this.state.showAddRestaurantModal ? (
           <PostRestaurant
             show={this.state.showAddRestaurantModal}
             onClose={this.handleCloseAddRestaurantModal}
             handleGet={this.handleGet}
+
           />
         ) : (
           <div id="checkInButtonDiv">
