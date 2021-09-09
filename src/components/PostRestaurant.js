@@ -2,13 +2,13 @@ import { Component } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import { withAuth0 } from '@auth0/auth0-react';
+
 import FindRestaurantForm from './GetRestaurant';
 import MatchedYelpRestaurants from './MatchedYelpRestaurants';
-import { withAuth0 } from '@auth0/auth0-react';
-import '../css/AddRest.css';
+import '../css/Modal.css';
 
-// const server = process.env.REACT_APP_HEROKU_URL;
-const server = 'http://localhost:3001';
+const server = process.env.REACT_APP_HEROKU_URL || process.env.REACT_APP_LOCAL;
 
 class PostRestaurant extends Component {
   constructor(props) {

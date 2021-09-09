@@ -20,7 +20,12 @@ nav Button {
   opacity: 0.9;
   margin: 10px;
   width:450px;
+  height: 450px;
   display:flex;
+}
+
+.card img{
+  overflow: auto;
 }
 
 .card button{
@@ -40,8 +45,8 @@ nav Button {
 }
 
 .card button:focus{
-  background-color: #dcd7ce;
-  color: #332F2D;
+  background-color: #332F2D;
+  color: #e2d9d4;
   box-shadow: none;
 }
 

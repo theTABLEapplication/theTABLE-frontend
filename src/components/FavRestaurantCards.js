@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import FavRestaurant from './FavRestaurantCard';
+import FavRestaurantCard from './FavRestaurantCard';
 
 class FavRestaurantCards extends Component {
   render() {
     return (
       this.props.favRestaurants.map((restaurant, idx) => {
         return (
-          <FavRestaurant onVisit={this.props.onVisit} restaurant={restaurant} key={restaurant._id} index={idx}
+          <FavRestaurantCard showEditModal={this.props.showEditModal} onVisit={this.props.onVisit} restaurant={restaurant} key={restaurant._id} index={idx}
           />
         );
       })
