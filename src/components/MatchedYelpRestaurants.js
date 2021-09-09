@@ -2,6 +2,7 @@ import { Component } from 'react';
 import {Button, ListGroup} from 'react-bootstrap/';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
+import '../css/MatchedRest.css';
 
 const server = process.env.REACT_APP_HEROKU_URL;
 
@@ -48,10 +49,10 @@ class MatchedYelpRestaurants extends Component {
             // <ListGroup.Item action onClick={alertClicked}>
             <ListGroup.Item key={restaurant.id} onClick={() => this.addRestaurant(restaurant)}>
               <div>
-                <p>{restaurant.name}</p>
-                <p>{restaurant.location.display_address[0]} {restaurant.location.display_address[1]}</p>
+                <h2 id="matchedRestName">{restaurant.name}</h2>
+                <p id="matchedRestLoc">{restaurant.location.display_address[0]} {restaurant.location.display_address[1]}</p>
               </div>
-              <Button>Select</Button>
+              <Button id="MatchedRestButton">Select</Button>
             </ListGroup.Item>
           );
         })

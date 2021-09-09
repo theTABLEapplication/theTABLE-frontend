@@ -3,7 +3,10 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { withAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
+
 const server = process.env.REACT_APP_HEROKU_URL;
+import '../css/EditModal.css';
+
 
 class EditModal extends Component {
 
@@ -21,8 +24,7 @@ class EditModal extends Component {
             <Modal.Title id="modalTitle">{this.props.selectedRestaurant.name}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Button onClick={this.handleDeleteClick}>DELETE</Button>
-            <Button>MEALS</Button>
+            <Button id="editModelDelete" onClick={this.handleDeleteClick}>DELETE RESTAURANT?</Button>
 
           </Modal.Body>
           <Modal.Footer>

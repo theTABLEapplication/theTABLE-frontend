@@ -2,6 +2,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 import { Component } from 'react';
 // import axios from 'axios';
 import { Modal, Button, Form } from 'react-bootstrap';
+import '../css/MealModal.css';
 
 class MealModal extends Component {
 
@@ -30,7 +31,7 @@ class MealModal extends Component {
               <Form.Group className="mb-3" controlId="formRecommend">
                 <Form.Check type="checkbox" label="Recommend?" />
               </Form.Group>
-              <Button type="submit">ADD</Button>
+              <Button id="addDishButton" type="submit">ADD</Button>
             </Form>
           </Modal.Body>
           {/* <Modal.Footer>
