@@ -3,7 +3,7 @@ import {Button, ListGroup} from 'react-bootstrap/';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 
-const server = process.env.REACT_APP_HEROKU_URL || process.env.REACT_APP_LOCAL;
+const server = process.env.REACT_APP_HEROKU_URL;
 
 class MatchedYelpRestaurants extends Component {
 

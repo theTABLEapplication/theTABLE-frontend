@@ -3,8 +3,6 @@ import { Component } from 'react';
 // import axios from 'axios';
 import { Modal, Button, Form } from 'react-bootstrap';
 
-// const server = process.env.REACT_APP_LOCAL;
-
 class MealModal extends Component {
 
   handleMealSubmit = async (event) => {
