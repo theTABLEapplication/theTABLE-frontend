@@ -7,10 +7,10 @@ class FavRestaurantCards extends Component {
     return (
       this.props.favRestaurants.map((restaurant, idx) => {
         return (
-                    <div id="favRestCards">
-          <FavRestaurantCard showMealModal={this.props.showMealModal} showEditModal={this.props.showEditModal} onVisit={this.props.onVisit} restaurant={restaurant} key={restaurant._id} index={idx}
-          />
-            </div>
+          <div id="favRestCards">
+            <FavRestaurantCard showMealModal={this.props.showMealModal} showEditModal={this.props.showEditModal} onVisit={this.props.onVisit} restaurant={restaurant} key={restaurant._id} index={idx}
+            />
+          </div>
         );
       })
     );
