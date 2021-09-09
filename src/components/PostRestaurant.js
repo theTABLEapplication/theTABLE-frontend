@@ -43,7 +43,7 @@ class PostRestaurant extends Component {
     return (
       <>
         <Modal show={this.props.show} onHide={this.props.onClose}>
-          <Modal.Header closeButton>
+          <Modal.Header>
             <Modal.Title id="modalTitle">Add A Restaurant</Modal.Title>
           </Modal.Header>
           <Modal.Body>

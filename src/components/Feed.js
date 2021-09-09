@@ -10,9 +10,11 @@ import PostRestaurant from './PostRestaurant';
 import FavRestaurantCards from './FavRestaurantCards';
 import EditModal from './EditModal';
 import MyMap from './MyMap';
+import MealModal from './MealModal';
 import '../css/Feed.css';
 
-const server = process.env.REACT_APP_HEROKU_URL || process.env.REACT_APP_LOCAL;
+const server = process.env.REACT_APP_LOCAL;
+// process.env.REACT_APP_HEROKU_URL ||
 const mapKey = process.env.REACT_APP_LOCATION;
 
 
@@ -22,9 +24,11 @@ class Feed extends Component {
     this.state = {
       showAddRestaurantModal: false,
       showEditModal: false,
+      showMealModal: false,
       favRestaurants: [],
       favMapUrl: '',
       selectedRestaurant: {},
+      selectedMealRestaurant: {},
     };
   }
 
@@ -44,7 +48,6 @@ class Feed extends Component {
         .catch((error) => {
           console.error(error);
         });
-      // console.log(this.state.favRestaurants);
       this.getPins();
     });
   }
@@ -54,15 +57,9 @@ class Feed extends Component {
     this.state.favRestaurants.map(x => {
       coordinateArray.push(`${x.latitude},${x.longitude}`);
     });
-    // for (let i = 0; i < lat.length; i++) {
-    //   coordinateArray.push(`${lat[i]},${lon[i]}`);
-    // }
-    // console.log(coordinateArray);
     let baseUrl = `https://maps.locationiq.com/v3/staticmap?key=${mapKey}&markers=icon:small-green-cutout|`;
     let coordinates = coordinateArray.join('|');
-    // console.log(coordinates);
     let finalMapURL = baseUrl + coordinates;
-    // console.log(finalMapURL);
     this.setState({ favMapUrl: finalMapURL });
   }
 
@@ -83,17 +80,47 @@ class Feed extends Component {
   };
 
   handleShowEditModal = (restaurant) => {
-    console.log(restaurant);
     this.setState({
       selectedRestaurant: restaurant,
       showEditModal: true,
     });
   };
 
+  handleShowMealModal = (restaurant) => {
+    this.setState({
+      selectedMealRestaurant: restaurant,
+      showMealModal: true,
+    });
+  };
+
+  handleMealSubmit = async (mealToAdd) => {
+    const updatedMeals = [...this.state.selectedMealRestaurant.meals, mealToAdd];
+    this.props.auth0.getIdTokenClaims().then(async (res) => {
+      const jwt = res.__raw;
+      const config = {
+        headers: { Authorization: `Bearer ${jwt}` },
+        method: 'put',
+        baseURL: server,
+        url: `restaurants/${this.state.selectedMealRestaurant._id}`,
+        data: { meals: updatedMeals },
+        params: { email: this.props.auth0.user.email },
+      };
+      try {
+        await axios(config);
+        await this.handleGet();
+        this.handleCloseEditModal();
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  }
+
   handleCloseEditModal = () => {
     this.setState({
       showEditModal: false,
+      showMealModal: false,
       selectedRestarant: {},
+      selectedMealRestaurant: {},
     });
   };
 
@@ -101,7 +128,6 @@ class Feed extends Component {
     let filtered = this.props.favRestaurants.filter(x => x.name === restaurantinput);
     if (filtered) {
       this.setState({ favRestaurants: filtered });
-      console.log(this.state.favRestaurants);
     } else {
       this.handleGet();
     }
@@ -147,11 +173,15 @@ class Feed extends Component {
           </div>
         )}
         {this.state.selectedRestaurant ?
-          <EditModal show={this.state.showEditModal} onClose={this.handleCloseEditModal} selectedRestaurant={this.state.selectedRestaurant} />
+          <EditModal show={this.state.showEditModal} onClose={this.handleCloseEditModal} handleGet={this.handleGet} selectedRestaurant={this.state.selectedRestaurant} />
+          : null
+        }
+        {this.state.selectedMealRestaurant ?
+          <MealModal show={this.state.showMealModal} onClose={this.handleCloseEditModal} handleGet={this.handleGet} selectedMealRestaurant={this.state.selectedMealRestaurant} handleMealSubmit={this.handleMealSubmit} />
           : null
         }
         <div id='rescards'>
-          {this.state.favRestaurants.length ? <FavRestaurantCards onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} stateEditModal={this.state.showEditModal} closeEditModal={this.handleCloseEditModal} showEditModal={this.handleShowEditModal} /> : null}
+          {this.state.favRestaurants.length ? <FavRestaurantCards showMealModal={this.handleShowMealModal} onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} stateEditModal={this.state.showEditModal} closeEditModal={this.handleCloseEditModal} showEditModal={this.handleShowEditModal} /> : null}
         </div>
         {this.state.favRestaurants.length ? <MyMap favRestaurants={this.state.favRestaurants} favMapUrl={this.state.favMapUrl} /> : null}
       </div>
