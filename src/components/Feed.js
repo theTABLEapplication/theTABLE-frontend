@@ -13,8 +13,6 @@ import MyMap from './MyMap';
 import '../css/Feed.css';
 
 const server = process.env.REACT_APP_HEROKU_URL || process.env.REACT_APP_LOCAL;
-const mapKey = process.env.REACT_APP_LOCATION;
-
 
 class Feed extends Component {
   constructor(props) {
@@ -23,7 +21,6 @@ class Feed extends Component {
       showAddRestaurantModal: false,
       showEditModal: false,
       favRestaurants: [],
-      favMapUrl: '',
       selectedRestaurant: {},
     };
   }
@@ -44,26 +41,7 @@ class Feed extends Component {
         .catch((error) => {
           console.error(error);
         });
-      // console.log(this.state.favRestaurants);
-      this.getPins();
     });
-  }
-
-  getPins = () => {
-    let coordinateArray = [];
-    this.state.favRestaurants.map(x => {
-      coordinateArray.push(`${x.latitude},${x.longitude}`);
-    });
-    // for (let i = 0; i < lat.length; i++) {
-    //   coordinateArray.push(`${lat[i]},${lon[i]}`);
-    // }
-    // console.log(coordinateArray);
-    let baseUrl = `https://maps.locationiq.com/v3/staticmap?key=${mapKey}&markers=icon:small-green-cutout|`;
-    let coordinates = coordinateArray.join('|');
-    // console.log(coordinates);
-    let finalMapURL = baseUrl + coordinates;
-    // console.log(finalMapURL);
-    this.setState({ favMapUrl: finalMapURL });
   }
 
   componentDidMount = () => {
@@ -132,7 +110,7 @@ class Feed extends Component {
   render() {
     return (
       <div id="feedDiv">
-        {/* <SearchBar searchMyRestaurants={this.searchMyRestaurants} favRestaurants={this.state.favRestaurants} /> */}
+        {this.state.favRestaurants.length ? <MyMap favRestaurants={this.state.favRestaurants}/> : null}
         {this.state.showAddRestaurantModal ? (
           <PostRestaurant
             show={this.state.showAddRestaurantModal}
@@ -153,7 +131,6 @@ class Feed extends Component {
         <div id='rescards'>
           {this.state.favRestaurants.length ? <FavRestaurantCards onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} stateEditModal={this.state.showEditModal} closeEditModal={this.handleCloseEditModal} showEditModal={this.handleShowEditModal} /> : null}
         </div>
-        {this.state.favRestaurants.length ? <MyMap favRestaurants={this.state.favRestaurants} favMapUrl={this.state.favMapUrl} /> : null}
       </div>
     );
   }

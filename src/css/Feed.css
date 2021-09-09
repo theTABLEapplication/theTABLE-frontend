@@ -18,3 +18,22 @@
   margin-top: 50px;
   margin-bottom: 20px;;
 }
+
+.map-container {
+  height: 400px;
+}
+
+.sidebar {
+  background-color: #8E7650;
+  color: #fff;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 120px 12px;
+
+  border-radius: 4px;
+}
+  
