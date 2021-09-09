@@ -9,6 +9,10 @@ nav Button {
   transition: all 0.8s ease-in-out;
 }
 
+#logoLogin {
+  width: 200px;
+}
+
 #rescards{
   display:flex;
   flex-wrap: wrap;
@@ -118,7 +122,7 @@ nav Button {
 }
 
 .logincard.card {
-  height: 300px;
+  height: 450px;
   margin:auto;
 }
 

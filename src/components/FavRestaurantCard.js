@@ -21,6 +21,7 @@ class FavRestaurantCard extends Component {
 
   render() {
     return (
+
       <Card className='card' key={this.props.index}>
         <Card.Img
           variant="top"

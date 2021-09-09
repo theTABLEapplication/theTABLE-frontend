@@ -10,7 +10,7 @@ import MyMap from './MyMap';
 import MealModal from './MealModal';
 import '../css/Feed.css';
 
-const server = process.env.REACT_APP_HEROKU_URL || process.env.REACT_APP_LOCAL;
+const server = process.env.REACT_APP_HEROKU_URL;
 
 class Feed extends Component {
   constructor(props) {

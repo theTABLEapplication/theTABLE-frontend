@@ -4,8 +4,6 @@ import { Component } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import '../css/MealModal.css';
 
-// const server = process.env.REACT_APP_LOCAL;
-
 class MealModal extends Component {
 
   handleMealSubmit = async (event) => {

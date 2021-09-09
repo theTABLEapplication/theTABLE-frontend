@@ -7,7 +7,7 @@ import FindRestaurantForm from './GetRestaurant';
 import MatchedYelpRestaurants from './MatchedYelpRestaurants';
 import '../css/Modal.css';
 
-const server = process.env.REACT_APP_HEROKU_URL || process.env.REACT_APP_LOCAL;
+const server = process.env.REACT_APP_HEROKU_URL;
 
 class PostRestaurant extends Component {
   constructor(props) {

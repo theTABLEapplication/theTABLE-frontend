@@ -17,7 +17,7 @@ class MyMap extends Component {
   }
 
   // Used MapBox DOCS to write the code below
-  componentDidMount = () => { 
+  componentDidMount = () => {
     this.renderMap();
   }
 

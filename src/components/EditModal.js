@@ -3,9 +3,10 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { withAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
-const server = process.env.REACT_APP_LOCAL;
+
+const server = process.env.REACT_APP_HEROKU_URL;
 import '../css/EditModal.css';
-//  process.env.REACT_APP_HEROKU_URL ||
+
 
 class EditModal extends Component {
 
