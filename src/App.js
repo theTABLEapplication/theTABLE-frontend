@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Feed from './components/Feed';
 import Profile from './components/Profile';
+import AboutUs from './components/AboutUs';
 import Login from './components/Login';
 
 import './css/App.css';
@@ -22,6 +23,9 @@ class App extends Component {
             </Route>
             <Route path='/profile'>
               <Profile />
+            </Route>
+            <Route path='/aboutus'>
+              <AboutUs />
             </Route>
           </Switch>
           <Footer />
