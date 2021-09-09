@@ -3,7 +3,7 @@ import LoginButton from './LoginButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import '../css/login.css';
-import logo from "../assets/tablelogo.png";
+import logo from '../assets/tablelogo.png';
 
 
 class Login extends React.Component {
