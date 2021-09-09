@@ -8,7 +8,6 @@ const server = process.env.REACT_APP_HEROKU_URL || process.env.REACT_APP_LOCAL;
 class MatchedYelpRestaurants extends Component {
 
   addRestaurant = (restaurant) => {
-    console.log(restaurant);
     this.props.auth0
       .getIdTokenClaims()
       .then(async (res) => {

@@ -7,6 +7,7 @@ import PostRestaurant from './PostRestaurant';
 import FavRestaurantCards from './FavRestaurantCards';
 import EditModal from './EditModal';
 import MyMap from './MyMap';
+import MealModal from './MealModal';
 import '../css/Feed.css';
 
 const server = process.env.REACT_APP_HEROKU_URL || process.env.REACT_APP_LOCAL;
@@ -17,8 +18,10 @@ class Feed extends Component {
     this.state = {
       showAddRestaurantModal: false,
       showEditModal: false,
+      showMealModal: false,
       favRestaurants: [],
       selectedRestaurant: {},
+      selectedMealRestaurant: {},
     };
   }
 
@@ -58,17 +61,47 @@ class Feed extends Component {
   };
 
   handleShowEditModal = (restaurant) => {
-    console.log(restaurant);
     this.setState({
       selectedRestaurant: restaurant,
       showEditModal: true,
     });
   };
 
+  handleShowMealModal = (restaurant) => {
+    this.setState({
+      selectedMealRestaurant: restaurant,
+      showMealModal: true,
+    });
+  };
+
+  handleMealSubmit = async (mealToAdd) => {
+    const updatedMeals = [...this.state.selectedMealRestaurant.meals, mealToAdd];
+    this.props.auth0.getIdTokenClaims().then(async (res) => {
+      const jwt = res.__raw;
+      const config = {
+        headers: { Authorization: `Bearer ${jwt}` },
+        method: 'put',
+        baseURL: server,
+        url: `restaurants/${this.state.selectedMealRestaurant._id}`,
+        data: { meals: updatedMeals },
+        params: { email: this.props.auth0.user.email },
+      };
+      try {
+        await axios(config);
+        await this.handleGet();
+        this.handleCloseEditModal();
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  }
+
   handleCloseEditModal = () => {
     this.setState({
       showEditModal: false,
+      showMealModal: false,
       selectedRestarant: {},
+      selectedMealRestaurant: {},
     });
   };
 
@@ -114,11 +147,15 @@ class Feed extends Component {
           </div>
         )}
         {this.state.selectedRestaurant ?
-          <EditModal show={this.state.showEditModal} onClose={this.handleCloseEditModal} selectedRestaurant={this.state.selectedRestaurant} />
+          <EditModal show={this.state.showEditModal} onClose={this.handleCloseEditModal} handleGet={this.handleGet} selectedRestaurant={this.state.selectedRestaurant} />
+          : null
+        }
+        {this.state.selectedMealRestaurant ?
+          <MealModal show={this.state.showMealModal} onClose={this.handleCloseEditModal} handleGet={this.handleGet} selectedMealRestaurant={this.state.selectedMealRestaurant} handleMealSubmit={this.handleMealSubmit} />
           : null
         }
         <div id='rescards'>
-          {this.state.favRestaurants.length ? <FavRestaurantCards onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} stateEditModal={this.state.showEditModal} closeEditModal={this.handleCloseEditModal} showEditModal={this.handleShowEditModal} /> : null}
+          {this.state.favRestaurants.length ? <FavRestaurantCards showMealModal={this.handleShowMealModal} onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} stateEditModal={this.state.showEditModal} closeEditModal={this.handleCloseEditModal} showEditModal={this.handleShowEditModal} /> : null}
         </div>
       </div>
     );
