@@ -29,7 +29,7 @@ class FindRestaurantForm extends Component {
           <Form.Control type='location' placeholder='Enter Zip Code, or City, State Here' />
         </Form.Group>
         <Button id="findRestButton" type='submit'>
-          hi
+          SEARCH
         </Button>
       </Form>
     );

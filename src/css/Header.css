@@ -25,9 +25,15 @@
   background-color: #76736E;
   color: #D3C3AB;
   transition: all 0.4s ease-in-out;
+  border: none;
 }
 
 #navBar button:hover {
   background-color: #DCD7CE;
   color: #332F2D;
+}
+
+#navBar img{
+  height:70px;
+  width:70px;
 }

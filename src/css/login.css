@@ -1,11 +1,49 @@
+nav Button {
+  background-color: #332F2D;
+  color: #e2d9d4;
+  border: #332F2D;
+  font-family: 'Oswald', sans-serif;
+  height: 50px;
+  width: 75px;
+  padding: 5px;
+}
+
+#rescards{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .card{
   text-align: center;
   background-color: #A49790;
-  opacity: 0.8;
-  margin-left: auto;
-  margin-right: auto;
+  opacity: 0.9;
+  margin: 10px;
+  width:450px;
+  display:flex;
 }
 
+.card button{
+  background-color: #332F2D;
+  color: #e2d9d4;
+  border: #332F2D;
+  font-family: 'Oswald', sans-serif;
+  height: 50px;
+  width: 75px;
+  padding: 5px;
+}
+
+.card button:hover{
+  background-color: #dcd7ce;
+  color: #332F2D;
+  transition: .5s;
+}
+
+.card button:focus{
+  background-color: #dcd7ce;
+  color: #332F2D;
+  box-shadow: none;
+}
 
 #cardTitle{
   font-family: 'Oswald', sans-serif;
@@ -17,4 +55,72 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   color: #181615;
+}
+
+.visitcount.card-text{
+  font-size: 30px;
+  text-align: center;
+}
+
+.card-body{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.restedit {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height:100%
+}
+
+.resttext {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: 'Oswald', sans-serif;
+  width: 75%;
+  height:100%;
+  font-size: 40px;
+}
+
+.restvisit{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.restvisits p{
+  margin:0;
+}
+
+.card-title.h5 {
+  font-size:30px;
+}
+
+.card-text {
+  font-size: 18px;
+}
+
+.card-text {
+  margin:0;
+}
+
+.logincard.card {
+  height: 300px;
+  margin:auto;
+}
+
+.logincard.card .card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.logincard.card button{
+  height: 100px;
+  width: 200px;
+  font-size: 40px;
 }

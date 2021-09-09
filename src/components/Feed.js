@@ -123,11 +123,13 @@ class Feed extends Component {
         ) : (
           <div id="checkInButtonDiv">
             <Button id="checkInButton" onClick={this.handleShowAddRestaurantModal}>
-              Check-in!
+              +RESTAURANT
             </Button>
           </div>
         )}
-        {this.state.favRestaurants.length ? <FavRestaurantCards onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} /> : null}
+        <div id='rescards'> 
+          {this.state.favRestaurants.length ? <FavRestaurantCards onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} /> : null}
+        </div>
         {this.state.favRestaurants.length ? <MyMap favRestaurants={this.state.favRestaurants} favMapUrl={this.state.favMapUrl} /> : null}
       </div>
     );
