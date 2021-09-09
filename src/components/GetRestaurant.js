@@ -21,11 +21,11 @@ class FindRestaurantForm extends Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Group controlId='restaurantName'>
-          <Form.Label>Restaurant Name</Form.Label>
+          <Form.Label id='restName'>Restaurant Name</Form.Label>
           <Form.Control type='name' placeholder='Enter Restaurant Name Here' />
         </Form.Group>
         <Form.Group controlId='restaurantLocation'>
-          <Form.Label>Restaurant Location</Form.Label>
+          <Form.Label id='restLocation'>Restaurant Location</Form.Label>
           <Form.Control type='location' placeholder='Enter Zip Code, or City, State Here' />
         </Form.Group>
         <Button id="findRestButton" type='submit'>
