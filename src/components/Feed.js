@@ -18,7 +18,8 @@ class Feed extends Component {
     super(props);
     this.state = {
       showAddRestaurantModal: false,
-      favRestaurants: []
+      favRestaurants: [],
+      favMapUrl: '',
     };
   }
 
@@ -38,7 +39,7 @@ class Feed extends Component {
         .catch((error) => {
           console.error(error);
         });
-      console.log(this.state.favRestaurants);
+      // console.log(this.state.favRestaurants);
       this.getPins();
     });
   }
@@ -51,18 +52,18 @@ class Feed extends Component {
     // for (let i = 0; i < lat.length; i++) {
     //   coordinateArray.push(`${lat[i]},${lon[i]}`);
     // }
-    console.log(coordinateArray);
-    let baseUrl = `https://tiles.locationiq.com/v3/streets/vector.json?key=${mapKey}&markers=icon:small-green-cutout|`;
+    // console.log(coordinateArray);
+    let baseUrl = `https://maps.locationiq.com/v3/staticmap?key=${mapKey}&markers=icon:small-green-cutout|`;
     let coordinates = coordinateArray.join('|');
-    console.log(coordinates);
+    // console.log(coordinates);
     let finalMapURL = baseUrl + coordinates;
-    console.log(finalMapURL);
+    // console.log(finalMapURL);
+    this.setState({ favMapUrl: finalMapURL });
   }
 
   componentDidMount = () => {
     this.handleGet();
   }
-  
 
   handleShowAddRestaurantModal = () => {
     this.setState({
@@ -127,7 +128,7 @@ class Feed extends Component {
           </div>
         )}
         {this.state.favRestaurants.length ? <FavRestaurantCards onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} /> : null}
-        {this.state.favRestaurants.length ? <MyMap favRestaurants={this.state.favRestaurants} /> : null}
+        {this.state.favRestaurants.length ? <MyMap favRestaurants={this.state.favRestaurants} favMapUrl={this.state.favMapUrl} /> : null}
       </div>
     );
   }
