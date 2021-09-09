@@ -7,10 +7,10 @@ import '../css/login.css';
 class Login extends React.Component {
   render() {
     return (
-      <Card style={{ width: '18rem' }}>
+      <Card className='logincard' style={{ width: '18rem' }}>
         <Card.Body>
-          <Card.Title id="cardTitle">Log In</Card.Title>
-          <Card.Text id="cardText">Click Below to Log In</Card.Text>
+          <Card.Title id="cardTitle">theTABLE</Card.Title>
+          <img src="../assets/tablelogo.png" />
           <LoginButton />
         </Card.Body>
       </Card>
