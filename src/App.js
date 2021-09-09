@@ -18,7 +18,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path='/'>
-              {this.props.auth0.isAuthenticated ? <Feed /> : <div id="loginPage"><Login /></div>}
+              {this.props.auth0.isAuthenticated ? <Feed id="feed"/> : <div id="loginPage"><Login /></div>}
             </Route>
             <Route path='/profile'>
               <Profile />

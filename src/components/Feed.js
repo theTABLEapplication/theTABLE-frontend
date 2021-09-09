@@ -107,9 +107,9 @@ class Feed extends Component {
 
           />
         ) : (
-          <div id="checkInButtonDiv">
-            <Button id="checkInButton" onClick={this.handleShowAddRestaurantModal}>
-              +RESTAURANT
+          <div id="addRestButtonDiv">
+            <Button id="addRestButton" onClick={this.handleShowAddRestaurantModal}>
+              ADD A RESTAURANT
             </Button>
           </div>
         )}

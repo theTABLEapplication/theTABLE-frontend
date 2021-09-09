@@ -41,7 +41,7 @@ class MyMap extends Component {
     if (this.props.favRestaurants) {
       this.props.favRestaurants.map((restaurant) => {
         return (new mapboxgl.Marker({
-          color: '#8E7650',
+          color: '#909C5F',
           draggable: false
         }).setLngLat([restaurant.longitude, restaurant.latitude])
           .setPopup(new mapboxgl.Popup({ offset: 25 }).setText(
