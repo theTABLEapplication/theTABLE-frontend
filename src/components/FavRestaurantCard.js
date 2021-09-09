@@ -7,7 +7,7 @@ class FavRestaurantCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visitCount: this.props.restaurant.visits
+      visitCount: this.props.restaurant.visits,
     };
   }
 
@@ -18,11 +18,17 @@ class FavRestaurantCard extends Component {
     this.props.onVisit(restaurant, this.state.visitCount);
   }
 
+  // subtractVisitCount = async (restaurant) => {
+  //   await this.setState({
+  //     visitCount: this.state.visitCount -1,
+  //   });
+  //   this.props.onVisit(restaurant, this.state.visitCount);
+  // }
+
   render() {
     return (
       <Card key={this.props.index}>
         <Card.Img
-          // onClick={}
           variant="top"
           src={this.props.restaurant.image_url}
           alt={this.props.restaurant.name}
@@ -30,7 +36,7 @@ class FavRestaurantCard extends Component {
         <Card.Body>
           <div className='restedit'>
             <Button>+MEAL</Button>
-            <Button>EDIT</Button>
+            <Button onClick={() => this.props.showEditModal(this.props.restaurant)}>EDIT</Button>
           </div>
           <div className='resttext'>
             <Card.Title>{this.props.restaurant.name}</Card.Title>
@@ -51,4 +57,3 @@ class FavRestaurantCard extends Component {
 }
 
 export default FavRestaurantCard;
-

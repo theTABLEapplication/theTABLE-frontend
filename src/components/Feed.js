@@ -1,15 +1,18 @@
 import { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import SearchBar from './SearchBar';
-import FavRestaurantCards from './FavRestaurantCards';
-// import AddFavDish from './AddFavDish';
-import PostRestaurant from './PostRestaurant';
-import MyMap from './MyMap';
 import Button from 'react-bootstrap/Button';
-import '../css/Feed.css';
 import axios from 'axios';
-const server = 'http://localhost:3001';
 import { withAuth0 } from '@auth0/auth0-react';
+// import SearchBar from './SearchBar';
+// import AddFavDish from './AddFavDish';
+
+import PostRestaurant from './PostRestaurant';
+import FavRestaurantCards from './FavRestaurantCards';
+import EditModal from './EditModal';
+import MyMap from './MyMap';
+import '../css/Feed.css';
+
+const server = process.env.REACT_APP_HEROKU_URL || process.env.REACT_APP_LOCAL;
 const mapKey = process.env.REACT_APP_LOCATION;
 
 
@@ -18,8 +21,10 @@ class Feed extends Component {
     super(props);
     this.state = {
       showAddRestaurantModal: false,
+      showEditModal: false,
       favRestaurants: [],
       favMapUrl: '',
+      selectedRestaurant: {},
     };
   }
 
@@ -44,7 +49,7 @@ class Feed extends Component {
     });
   }
 
-  getPins = async () => {
+  getPins = () => {
     let coordinateArray = [];
     this.state.favRestaurants.map(x => {
       coordinateArray.push(`${x.latitude},${x.longitude}`);
@@ -77,6 +82,21 @@ class Feed extends Component {
     });
   };
 
+  handleShowEditModal = (restaurant) => {
+    console.log(restaurant);
+    this.setState({
+      selectedRestaurant: restaurant,
+      showEditModal: true,
+    });
+  };
+
+  handleCloseEditModal = () => {
+    this.setState({
+      showEditModal: false,
+      selectedRestarant: {},
+    });
+  };
+
   searchMyRestaurants(restaurantinput) {
     let filtered = this.props.favRestaurants.filter(x => x.name === restaurantinput);
     if (filtered) {
@@ -87,7 +107,6 @@ class Feed extends Component {
     }
   }
 
-  //TODO: finish this
   onVisit = async (restaurant, visits) => {
     this.props.auth0.getIdTokenClaims().then(async (res) => {
       const jwt = res.__raw;
@@ -127,8 +146,12 @@ class Feed extends Component {
             </Button>
           </div>
         )}
-        <div id='rescards'> 
-          {this.state.favRestaurants.length ? <FavRestaurantCards onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} /> : null}
+        {this.state.selectedRestaurant ?
+          <EditModal show={this.state.showEditModal} onClose={this.handleCloseEditModal} selectedRestaurant={this.state.selectedRestaurant} />
+          : null
+        }
+        <div id='rescards'>
+          {this.state.favRestaurants.length ? <FavRestaurantCards onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} stateEditModal={this.state.showEditModal} closeEditModal={this.handleCloseEditModal} showEditModal={this.handleShowEditModal} /> : null}
         </div>
         {this.state.favRestaurants.length ? <MyMap favRestaurants={this.state.favRestaurants} favMapUrl={this.state.favMapUrl} /> : null}
       </div>
