@@ -3,9 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
-// import SearchBar from './SearchBar';
-// import AddFavDish from './AddFavDish';
-
 import PostRestaurant from './PostRestaurant';
 import FavRestaurantCards from './FavRestaurantCards';
 import EditModal from './EditModal';
@@ -75,16 +72,6 @@ class Feed extends Component {
     });
   };
 
-  // searchMyRestaurants(restaurantinput) {
-  //   let filtered = this.props.favRestaurants.filter(x => x.name === restaurantinput);
-  //   if (filtered) {
-  //     this.setState({ favRestaurants: filtered });
-  //     console.log(this.state.favRestaurants);
-  //   } else {
-  //     this.handleGet();
-  //   }
-  // }
-
   onVisit = async (restaurant, visits) => {
     this.props.auth0.getIdTokenClaims().then(async (res) => {
       const jwt = res.__raw;
@@ -106,7 +93,6 @@ class Feed extends Component {
       }
     });
   }
-
 
   render() {
     return (
