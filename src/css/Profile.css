@@ -5,6 +5,12 @@
   align-items: center;
 }
 
+#profileDiv h1{
+  font-family: 'Oswald', sans-serif;
+  font-size: 55px;
+  margin-top: 5%;
+}
+
 #userProfileName{
   font-family: 'Oswald', sans-serif;
   font-size: 40px;
@@ -15,4 +21,9 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: #9B8567;
+}
+
+#profileImage{
+  height: 100px;
+  margin-top: 2%;
 }
