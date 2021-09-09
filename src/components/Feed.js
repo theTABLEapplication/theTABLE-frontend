@@ -4,11 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FavRestaurantCards from './FavRestaurantCards';
 // import AddFavDish from './AddFavDish';
 import PostRestaurant from './PostRestaurant';
+import MyMap from './MyMap';
 import Button from 'react-bootstrap/Button';
 import '../css/Feed.css';
 import axios from 'axios';
 const server = 'http://localhost:3001';
 import { withAuth0 } from '@auth0/auth0-react';
+const mapKey = process.env.REACT_APP_LOCATION;
 
 
 class Feed extends Component {
@@ -36,12 +38,31 @@ class Feed extends Component {
         .catch((error) => {
           console.error(error);
         });
+      console.log(this.state.favRestaurants);
+      this.getPins();
     });
+  }
+
+  getPins = async () => {
+    let coordinateArray = [];
+    this.state.favRestaurants.map(x => {
+      coordinateArray.push(`${x.latitude},${x.longitude}`);
+    });
+    // for (let i = 0; i < lat.length; i++) {
+    //   coordinateArray.push(`${lat[i]},${lon[i]}`);
+    // }
+    console.log(coordinateArray);
+    let baseUrl = `https://tiles.locationiq.com/v3/streets/vector.json?key=${mapKey}&markers=icon:small-green-cutout|`;
+    let coordinates = coordinateArray.join('|');
+    console.log(coordinates);
+    let finalMapURL = baseUrl + coordinates;
+    console.log(finalMapURL);
   }
 
   componentDidMount = () => {
     this.handleGet();
   }
+  
 
   handleShowAddRestaurantModal = () => {
     this.setState({
@@ -67,22 +88,22 @@ class Feed extends Component {
 
   //TODO: finish this
   onVisit = async (restaurant, visits) => {
-    this.props.auth0.getIdTokenClaims().then(async(res) =>{
-      const jwt=res.__raw;
+    this.props.auth0.getIdTokenClaims().then(async (res) => {
+      const jwt = res.__raw;
       const config = {
         headers: { Authorization: `Bearer ${jwt}` },
         method: 'put',
         baseURL: server,
         url: `restaurants/${restaurant._id}`,
-        data: {visits},
+        data: { visits },
         params: { email: this.props.auth0.user.email },
       };
-      try{
+      try {
         const response = await axios(config);
         const updatedRestaurant = response.data;
-        const restaurants = this.state.favRestaurants.map(x => x._id === updatedRestaurant._id ? updatedRestaurant : x );
-        this.setState({favRestaurants: restaurants});
-      }catch(error){
+        const restaurants = this.state.favRestaurants.map(x => x._id === updatedRestaurant._id ? updatedRestaurant : x);
+        this.setState({ favRestaurants: restaurants });
+      } catch (error) {
         console.error(error);
       }
     });
@@ -106,6 +127,7 @@ class Feed extends Component {
           </div>
         )}
         {this.state.favRestaurants.length ? <FavRestaurantCards onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} /> : null}
+        {this.state.favRestaurants.length ? <MyMap favRestaurants={this.state.favRestaurants} /> : null}
       </div>
     );
   }
