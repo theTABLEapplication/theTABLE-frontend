@@ -3,6 +3,8 @@ import LoginButton from './LoginButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import '../css/login.css';
+import logo from "../assets/tablelogo.png";
+
 
 class Login extends React.Component {
   render() {
@@ -10,7 +12,7 @@ class Login extends React.Component {
       <Card className='logincard' style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title id="cardTitle">theTABLE</Card.Title>
-          <img src="../assets/tablelogo.png" />
+          <img id="logoLogin" src={logo} />
           <LoginButton />
         </Card.Body>
       </Card>

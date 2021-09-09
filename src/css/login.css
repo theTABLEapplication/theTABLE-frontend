@@ -8,6 +8,10 @@ nav Button {
   padding: 5px;
 }
 
+#logoLogin {
+  width: 100px;
+}
+
 #rescards{
   display:flex;
   flex-wrap: wrap;
