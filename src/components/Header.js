@@ -7,7 +7,7 @@ import Logout from './LogoutButton';
 import Login from './LoginButton';
 import '../css/Header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from "../assets/tablelogo.png";
+import logo from '../assets/tablelogo.png';
 
 class Header extends Component {
   render() {
