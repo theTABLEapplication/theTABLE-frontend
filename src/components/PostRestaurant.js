@@ -3,7 +3,6 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
-
 import FindRestaurantForm from './GetRestaurant';
 import MatchedYelpRestaurants from './MatchedYelpRestaurants';
 import '../css/Modal.css';
@@ -36,8 +35,6 @@ class PostRestaurant extends Component {
       })
       .catch((error) => console.error(error));
   };
-
-  // TODO: reset restaurant state to empty array after selecting restaurant from api search
 
   render() {
     return (
