@@ -12,9 +12,8 @@ class Header extends Component {
   render() {
     return(
       <Navbar collapseOnSelect expand="lg" id="navBar">
-        <Navbar.Brand id="navBarTitle"><img src="../assets/tablelogo.png" /> theTABLE </Navbar.Brand>
+        <Navbar.Brand id="navBarTitle"><img src="../assets/tablelogo.png"/> theTABLE </Navbar.Brand>
         <NavItem><Link to="/" className="nav-link">Home</Link></NavItem>
-        <NavItem><Link to="/mymap" className="nav-link">My Map</Link></NavItem>
         <NavItem><Link to="/profile" className="nav-link">Profile</Link></NavItem>
         {this.props.auth0.isAuthenticated ? <Logout /> : <Login />}
       </Navbar>

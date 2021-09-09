@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Button, Accordion } from 'react-bootstrap';
+import '../css/FavRestCard.css';
 
 class FavRestaurantCard extends Component {
 
@@ -21,7 +22,7 @@ class FavRestaurantCard extends Component {
   render() {
     return (
       <div className='favCard'>
-        <Card key={this.props.index}>
+        <Card className='card' key={this.props.index}>
           <Card.Img
             variant="top"
             src={this.props.restaurant.image_url}

@@ -3,9 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
-// import SearchBar from './SearchBar';
-// import AddFavDish from './AddFavDish';
-
 import PostRestaurant from './PostRestaurant';
 import FavRestaurantCards from './FavRestaurantCards';
 import EditModal from './EditModal';
@@ -13,10 +10,7 @@ import MyMap from './MyMap';
 import MealModal from './MealModal';
 import '../css/Feed.css';
 
-const server = process.env.REACT_APP_LOCAL;
-// process.env.REACT_APP_HEROKU_URL ||
-const mapKey = process.env.REACT_APP_LOCATION;
-
+const server = process.env.REACT_APP_HEROKU_URL || process.env.REACT_APP_LOCAL;
 
 class Feed extends Component {
   constructor(props) {
@@ -26,7 +20,6 @@ class Feed extends Component {
       showEditModal: false,
       showMealModal: false,
       favRestaurants: [],
-      favMapUrl: '',
       selectedRestaurant: {},
       selectedMealRestaurant: {},
     };
@@ -48,19 +41,7 @@ class Feed extends Component {
         .catch((error) => {
           console.error(error);
         });
-      this.getPins();
     });
-  }
-
-  getPins = () => {
-    let coordinateArray = [];
-    this.state.favRestaurants.map(x => {
-      coordinateArray.push(`${x.latitude},${x.longitude}`);
-    });
-    let baseUrl = `https://maps.locationiq.com/v3/staticmap?key=${mapKey}&markers=icon:small-green-cutout|`;
-    let coordinates = coordinateArray.join('|');
-    let finalMapURL = baseUrl + coordinates;
-    this.setState({ favMapUrl: finalMapURL });
   }
 
   componentDidMount = () => {
@@ -124,15 +105,6 @@ class Feed extends Component {
     });
   };
 
-  searchMyRestaurants(restaurantinput) {
-    let filtered = this.props.favRestaurants.filter(x => x.name === restaurantinput);
-    if (filtered) {
-      this.setState({ favRestaurants: filtered });
-    } else {
-      this.handleGet();
-    }
-  }
-
   onVisit = async (restaurant, visits) => {
     this.props.auth0.getIdTokenClaims().then(async (res) => {
       const jwt = res.__raw;
@@ -158,17 +130,19 @@ class Feed extends Component {
   render() {
     return (
       <div id="feedDiv">
-        {/* <SearchBar searchMyRestaurants={this.searchMyRestaurants} favRestaurants={this.state.favRestaurants} /> */}
+        {this.state.favRestaurants.length ? <MyMap favRestaurants={this.state.favRestaurants}
+          handleGet={this.handleGet} /> : null}
         {this.state.showAddRestaurantModal ? (
           <PostRestaurant
             show={this.state.showAddRestaurantModal}
             onClose={this.handleCloseAddRestaurantModal}
             handleGet={this.handleGet}
+
           />
         ) : (
-          <div id="checkInButtonDiv">
-            <Button id="checkInButton" onClick={this.handleShowAddRestaurantModal}>
-              +RESTAURANT
+          <div id="addRestButtonDiv">
+            <Button id="addRestButton" onClick={this.handleShowAddRestaurantModal}>
+              ADD A RESTAURANT
             </Button>
           </div>
         )}
@@ -183,7 +157,6 @@ class Feed extends Component {
         <div id='rescards'>
           {this.state.favRestaurants.length ? <FavRestaurantCards showMealModal={this.handleShowMealModal} onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} stateEditModal={this.state.showEditModal} closeEditModal={this.handleCloseEditModal} showEditModal={this.handleShowEditModal} /> : null}
         </div>
-        {this.state.favRestaurants.length ? <MyMap favRestaurants={this.state.favRestaurants} favMapUrl={this.state.favMapUrl} /> : null}
       </div>
     );
   }
