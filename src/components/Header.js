@@ -11,12 +11,12 @@ import logo from '../assets/tablelogo.png';
 
 class Header extends Component {
   render() {
-    return(
+    return (
       <Navbar collapseOnSelect expand="lg" id="navBar">
         <Navbar.Brand id="navBarTitle"><img src={logo} /> theTABLE </Navbar.Brand>
-        <NavItem><Link to="/" className="nav-link">Home</Link></NavItem>
+        {this.props.auth0.isAuthenticated ? (<NavItem><Link to="/" className="nav-link">Home</Link></NavItem>) : null}
         {this.props.auth0.isAuthenticated ? (<NavItem><Link to="/profile" className="nav-link">Profile</Link></NavItem>) : null}
-        <NavItem><Link to="/aboutus" className="nav-link">About Us</Link></NavItem>
+        {this.props.auth0.isAuthenticated ? (<NavItem><Link to="/aboutus" className="nav-link">About Us</Link></NavItem>) : null}
         {this.props.auth0.isAuthenticated ? <Logout /> : <Login />}
       </Navbar>
     );
