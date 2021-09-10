@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/Profile.css';
 import Image from 'react-bootstrap/Image';
 import Sarah from '../assets/sarahphoto.jpg';
-import Justin from '../assets/justin-photo.jpg';
+import Justin from '../assets/justinphoto.jpg';
 import email from '../assets/emailIcon.png';
 import gitHub from '../assets/gitHubIcon.png';
 import linkedIn from '../assets/linkedInLogo.png';
@@ -31,7 +31,7 @@ const AboutUs = () => {
         <h1>Justin Hamerly</h1>
         <Image id="justinProfileImage" src={Justin} alt={'Justin Hamerly'} roundedCircle />
         <div id="justinLinks">
-          <a id="justinLinkedIn" href='https://www.linkedin.com/in/justin-hamerly-spain/'  target='_blank'>
+          <a id="justinLinkedIn" href='https://www.linkedin.com/in/justin-hamerly-spain/' target='_blank'>
             <img alt="linkedIn" src={linkedIn} />
           </a>
           <a id="justinGithub" href='https://github.com/JustinHamerly' target='_blank'>
@@ -41,13 +41,13 @@ const AboutUs = () => {
             <img alt="email" src={email} />
           </a>
         </div>
-        <p>Bio Here</p>
+        <p>Justin comes from a design background - from architectural design to costume design. He believes great design comes from resourcefulness and diverse teams.  He is client focused and objective driven.</p>
       </div>
       <div key={3} id="chrisaboutus">
         <h1>Christopher Burk</h1>
         <Image id="chrisProfileImage" src='' alt={'Chris Burk'} roundedCircle />
         <div id="chrisLinks">
-          <a id="chrisLinkedIn" href='https://www.linkedin.com/in/christopherburk/'  target='_blank'>
+          <a id="chrisLinkedIn" href='https://www.linkedin.com/in/christopherburk/' target='_blank'>
             <img alt="linkedIn" src={linkedIn} />
           </a>
           <a id="chrisGithub" href='https://github.com/cburk2019' target='_blank'>
@@ -63,7 +63,7 @@ const AboutUs = () => {
         <h1>Haustin Kimbrough</h1>
         <Image id="haustinProfileImage" src='' alt={'Haustin Kimbrough'} roundedCircle />
         <div id="haustinLinks">
-          <a id="haustinLinkedIn" href='https://www.linkedin.com/in/haustin-kimbrough/'  target='_blank'>
+          <a id="haustinLinkedIn" href='https://www.linkedin.com/in/haustin-kimbrough/' target='_blank'>
             <img alt="linkedIn" src={linkedIn} />
           </a>
           <a id="haustinGithub" href='https://github.com/hkimbrough22' target='_blank'>
