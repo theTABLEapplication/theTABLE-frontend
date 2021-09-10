@@ -22,7 +22,7 @@ class FavRestaurantCard extends Component {
   render() {
     return (
 
-      <Card className='card' key={this.props.index}>
+      <Card id="favRestCard" className='card' key={this.props.index}>
         <Card.Img
           variant="top"
           src={this.props.restaurant.image_url}

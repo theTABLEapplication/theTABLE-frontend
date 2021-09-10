@@ -1,14 +1,8 @@
-/* #resCards{ */
-  /* display:flex;
+#restaurantCardContainer{
+  display:flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: stretch;
   margin-top: 4%;
-  width:35%;
-} */
-#rescards{
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }

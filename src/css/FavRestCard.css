@@ -1,11 +1,13 @@
-/* .card {
-  width: 80px;
+#favRestCard {
+  width: 380px;
+  margin-top: 2%;
+  margin-bottom: 2%;
   transition: all 0.8s ease-in-out;
 }
 
-.Card:hover {
-  transform: scale(1.1);
-} */
+#favRestCard:hover {
+  transform: scale(1.08);
+}
 
 #restCardURL{
   font-size: 15pt;
@@ -33,8 +35,8 @@
   transition: all 0.8s ease-in-out;
 }
 
-.card img{
-  overflow: auto;
+#favRestCard  img{
+  height: 900px;
   transition: all 0.8s ease-in-out;
 }
 
