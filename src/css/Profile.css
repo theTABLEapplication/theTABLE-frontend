@@ -1,0 +1,30 @@
+#profileDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeebe4;
+  height: 670px;
+}
+
+#profileDiv h1{
+  font-family: 'Oswald', sans-serif;
+  font-size: 55px;
+}
+
+#userProfileName{
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  color: #655C58;
+}
+
+#userEmail{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #9B8567;
+}
+
+#profileImage{
+  height: 100px;
+  margin-top: 2%;
+}

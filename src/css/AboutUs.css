@@ -1,0 +1,53 @@
+#aboutusDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+  background-color: #eeebe4;
+}
+
+#sarahaboutus, #justinaboutus, #chrisaboutus, #haustinaboutus{
+  margin:2%;
+}
+
+#sarahProfileImage, #justinProfileImage, #chrisProfileImage, #haustinProfileImage{
+  height:200px;
+  width:200px;
+  margin-top:4%;
+  transition: all 0.8s ease-in-out;
+}
+#sarahProfileImage:hover, #justinProfileImage:hover, #chrisProfileImage:hover, #haustinProfileImage:hover{
+  transform: scale(1.1);
+}
+
+#aboutusDiv h1{
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  color: #b49564;
+  margin-top: 10%;
+}
+
+#sarahLinks img, #justinLinks img, #chrisLinks img, #haustinLinks img{
+  width: 40px;
+  margin: 8% 2%;
+  transition: all 0.8s ease-in-out;
+}
+
+#sarahLinks img:hover, #justinLinks img:hover, #chrisLinks img:hover, #haustinLinks img:hover{
+  transform: scale(1.1);
+}
+
+#aboutusDiv p{
+  width: 250px;
+  text-align: left;
+  margin-top: 4%;
+}
+
+#chrisaboutus p{
+  margin-left: 4%;
+}
+
+#haustinaboutus p{
+  margin-left: 6%;
+}

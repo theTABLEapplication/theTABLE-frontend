@@ -1,0 +1,41 @@
+
+#navBar {
+  background-color: #181615;
+  display: flex;
+  justify-content: space-evenly;
+  height: 100px;
+  transition: all 0.8s ease-in-out;
+}
+
+
+#navBarTitle{
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  color: #76736E;
+}
+
+.nav-link{
+  color: #938877!important;
+  transition: all 0.6s ease-in-out!important;
+}
+
+.nav-link:hover{
+  color: #DCD7CE !important;
+}
+
+#navBar button {
+  background-color: #76736E;
+  color: #D3C3AB;
+  transition: all 0.4s ease-in-out;
+  border: none;
+}
+
+#navBar button:hover {
+  background-color: #DCD7CE;
+  color: #332F2D;
+}
+
+#navBar img{
+  height:70px;
+  width:70px;
+}

@@ -1,0 +1,31 @@
+#MatchedRestButton{
+  background-color: #DABB92;
+  color: #332F2D;
+  border: #332F2D;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  margin-bottom: 4%;
+  transition: all 0.5s ease-in-out;
+}
+
+#MatchedRestButton:hover{
+  background-color: #DCD7CE;
+  color: #76736E;
+  border: #332F2D;
+}
+
+#matchedRestName{
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  color:#332F2D;
+}
+
+#matchedRestLoc{
+  font-weight: 700px;
+  font-family: 'Montserrat', sans-serif;
+  color:#8E7650;
+}

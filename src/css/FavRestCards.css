@@ -1,0 +1,13 @@
+#restaurantCardContainer{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin:auto;
+}
+
+#rescards {
+  display:flex;
+  justify-content: center;
+}

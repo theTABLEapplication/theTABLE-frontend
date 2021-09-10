@@ -1,0 +1,37 @@
+#findRestButton{
+  background-color: #332F2D;
+  color: #A49790;
+  border: #332F2D;
+  margin-top: 6%;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+  transition: all 0.5s ease-in-out;
+}
+#findRestButton:hover{
+  background-color: #A49790;
+  color: #332F2D;
+  border: #332F2D;
+}
+
+
+#formGroup{
+  margin-top: 2%;
+  margin-bottom: 6%;
+}
+
+#restName{
+  margin-bottom: 2%;
+  font-weight: 700px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#restLocation{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700px;
+  margin-bottom: 2%;
+  margin-top: 4%;
+}
