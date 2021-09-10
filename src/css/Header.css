@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-evenly;
   height: 100px;
+  transition: all 0.8s ease-in-out;
 }
 
 #navBarTitle{
@@ -14,7 +15,7 @@
 
 .nav-link{
   color: #938877!important;
-  transition: all 0.8s ease-in-out;
+  transition: all 0.6s ease-in-out!important;
 }
 
 .nav-link:hover{
