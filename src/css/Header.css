@@ -1,6 +1,7 @@
 
 #navBar {
   background-color: #181615;
+  width:100%;
   display: flex;
   justify-content: space-evenly;
   height: 100px;

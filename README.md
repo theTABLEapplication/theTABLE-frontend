@@ -1,20 +1,37 @@
-# theTABLE (client)
+# theTABLE
 
 ## Authors: Sarah Creager, Justin Hamerly, Christopher Burk, Haustin Kimbrough
 
-## Version: 1.0.0
+## Version: 1.1.0
 
 ## Description
 
-theTABLE is an app that allows you to track the restaurants you have gone to and your recommended items. You will also be able to see your friend's recommended dishes and restaurants on your feed and personal map. The app will track your most frequented restaurants as well as offer recommendations from friends for other restaurants and food items. It is a social media, info feed for foodies and hungry people who need some inspiration on where to go tonight.
+theTABLE is an app that allows you to track the restaurants you have gone to and your recommended items. You will also be able restaurants on your favorites feed and personal map. The app will track your most frequented restaurants as well as offer reminders of your favorite food items. It is an info feed for foodies and hungry people who need some inspiration on where to go tonight.
 
-## Resources and Contributions
+## Resources
 
 - _[ReactJS](https://reactjs.org/)_
 - _[React Bootstrap](https://react-bootstrap.github.io/)_
 - _[mapbox](https://docs.mapbox.com/)_
+- _[NodeJS](https://nodejs.org/en/)_
+- _[Yelp API](https://www.yelp.com/developers/documentation/v3)_
+- _[Miro](https://miro.com/)_
+- _[Trello](https://trello.com/)_
+- _[Unsplash](https://unsplash.com/)_
+- _[W3Schools](https://www.w3schools.com/)_
+- _[MDN Web Docs](https://developer.mozilla.org/en-US/)_
+- _[Stack Overflow](https://stackoverflow.com/)_
 
-## Change Log
+## Contributions
+
+- _[JB Tellez](https://www.linkedin.com/in/jb-tellez/)_
+- _[Hexx King](https://www.linkedin.com/in/hexx-king/)_
+- _[Chance Harmon](https://www.linkedin.com/in/chance-harmon/)_
+- _[Kristian Esvelt](https://www.linkedin.com/in/kristianesvelt/)_
+- _[Audrey Patterson](https://www.linkedin.com/in/audrey-patterson31/)_
+- _[JP Jones](https://www.linkedin.com/in/jp-jones/)_
+- _[Joe Pennock](https://www.linkedin.com/in/joepennock/)_
+- And all the other TAs who helped us along the way
 
 ## Domain Model
 
@@ -56,13 +73,13 @@ Feature Tasks:
 
 - User clicks a check in button to track the restaurants they've visited.
 
-- User can upload a photo and name of favorite dish at the restaurant.
+- User can add a name of favorite dish at the restaurant.
 
 Acceptance:
 
 - When user clicks the check-in button, the tally for visits to that current restaurant increases.
 
-- User is able to upload a picture and name of their favorite dish which saves to their favorites page.
+- User is able to add name of their favorite dish which saves to their favorites page.
 
 ### ADD A MAP THAT DISPLAYS PREVIOUSLY VISITED RESTAURANTS
 
@@ -74,7 +91,7 @@ Feature Tasks:
 
 - Pin will be a unique color.
 
-- Pin size will vary based on how many times they’ve visited the restaurant.
+- Map is dynamic, allowing user to scroll and see all their pins around the world.
 
 Acceptance:
 
@@ -82,9 +99,9 @@ Acceptance:
 
 - The pins will display in a unique color for user’s selections.
 
-- The pins will increase in size every 3 times the restaurant is visited.
+- The map will be scrollable, zooming in and out.
 
-### ADD A MAP THAT DISPLAYS FRIEND'S VISITED RESTAURANTS
+### FUTURE FEATURE: ADD A MAP THAT DISPLAYS FRIEND'S VISITED RESTAURANTS
 
 As a user, I want to view the restaurants my friends have already visited so I can easily make a selection if I want to eat somewhere new recommended from a trusted source.
 
@@ -100,7 +117,7 @@ Acceptance:
 
 - The pins will display in a unique color for friend's selections.
 
-### ADD A MAP THAT DISPLAYS NEARBY RESTAURANTS
+### FUTURE FEATURE: ADD A MAP THAT DISPLAYS NEARBY RESTAURANTS
 
 As a user, I want to view all the restaurants nearby so I can easily make a selection if I want to explore somewhere new.
 
@@ -116,7 +133,7 @@ Acceptance:
 
 - The pins will display in a unique color.
 
-### MAP TOGGLES BETWEEN VIEWS
+### FUTURE FEATURE: MAP TOGGLES BETWEEN VIEWS
 
 As a user, I want to toggle between my restaurant pins, my friend's pins, and all other nearby restaurant pins on the map so I can easily make a selection based off of each filtered view.
 
