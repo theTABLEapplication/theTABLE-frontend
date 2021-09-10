@@ -2,7 +2,7 @@
   width: 380px;
   margin-top: 2%;
   margin-bottom: 2%;
-  transition: all 0.8s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 #favRestCard:hover {
@@ -28,15 +28,15 @@
   text-align: center;
   background-color: #A49790;
   opacity: 0.9;
-  margin: 10px;
   width:450px;
-  height: 450px;
+  margin:10px;
+  height: 500px;
   display:flex;
   transition: all 0.8s ease-in-out;
 }
 
 #favRestCard  img{
-  height: 900px;
+  height: 400px;
   transition: all 0.8s ease-in-out;
 }
 
@@ -87,7 +87,7 @@
 
 #cardTitle{
   font-family: 'Oswald', sans-serif;
-  font-size: 35px;
+  font-size: 24px;
   color: #181615 ;
 } 
 
@@ -108,4 +108,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px;
+  height:150px;
+  min-height:150px;
+}
+
+.card-img-top{
+  max-height: 350px;
+  overflow:hidden;
 }

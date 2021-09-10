@@ -13,7 +13,6 @@ nav Button {
   width: 200px;
 }
 
-
 .restedit {
   display: flex;
   flex-direction: column;
@@ -42,7 +41,7 @@ nav Button {
 }
 
 .card-title.h5 {
-  font-size:30px;
+  font-size:20px;
 }
 
 .card-text {
@@ -96,7 +95,6 @@ nav Button {
   padding-right:40px;
   font-family: 'Oswald', sans-serif;
   font-size: 20px;
-
 }
 
 .fooditem {

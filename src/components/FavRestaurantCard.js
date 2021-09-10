@@ -30,8 +30,8 @@ class FavRestaurantCard extends Component {
           title={this.props.restaurant.name} />
         <Card.Body>
           <div className='restedit'>
-            <Button id="addMealButton" onClick={() => this.props.showMealModal(this.props.restaurant)}>+MEAL</Button>
             <Button id="editMealButton" onClick={() => this.props.showEditModal(this.props.restaurant)}>EDIT</Button>
+            <Button id="addMealButton" onClick={() => this.props.showMealModal(this.props.restaurant)}>+MEAL</Button>
           </div>
           <div className='resttext'>
             <Card.Title id="cardTitle">{this.props.restaurant.name}</Card.Title>
