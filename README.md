@@ -10,6 +10,10 @@ theTABLE is an app that allows you to track the restaurants you have gone to and
 
 ## Resources and Contributions
 
+- _[ReactJS](https://reactjs.org/)_
+- _[React Bootstrap](https://react-bootstrap.github.io/)_
+- _[mapbox](https://docs.mapbox.com/)_
+
 ## Change Log
 
 ## Domain Model

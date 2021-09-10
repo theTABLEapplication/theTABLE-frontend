@@ -27,7 +27,7 @@ const AboutUs = () => {
             <img alt="email" src={email} />
           </a>
         </div>
-        <p>Sarah is a former ICU nurse and musician, pursuing her passion for software development. She is committed to creating software that's accessible to everyone, with an approachable and inviting touch.</p>
+        <p>Sarah is a former ICU nurse and musician, pursuing her passion for software development.<br/> She is committed to creating software that's accessible to everyone, with an approachable and inviting touch.</p>
       </div>
       <div key={2} id="justinaboutus">
         <h1>Justin Hamerly</h1>
@@ -43,7 +43,7 @@ const AboutUs = () => {
             <img alt="email" src={email} />
           </a>
         </div>
-        <p>Justin comes from a design background - from architectural design to costume design. He believes great design comes from resourcefulness and diverse teams.  He is client focused and objective driven.</p>
+        <p>Justin comes from a design background - from architectural design to costume design.<br/> He believes great design comes from resourcefulness and diverse teams.  He is client focused and objective driven.</p>
       </div>
       <div key={3} id="chrisaboutus">
         <h1>Christopher Burk</h1>
@@ -59,7 +59,7 @@ const AboutUs = () => {
             <img alt="email" src={email} />
           </a>
         </div>
-        <p>Bio Here</p>
+        <p>Christopher is transitioning from retail management and finance. He is striving to break into the tech industry and progressively work his way into management.<br/> He believes that all people should have access to anything and all things technology and is committed to reaching and helping those without it. He loves people!</p>
       </div>
       <div key={4} id="haustinaboutus">
         <h1>Haustin Kimbrough</h1>
@@ -75,7 +75,7 @@ const AboutUs = () => {
             <img alt="email" src={email} />
           </a>
         </div>
-        <p>I come from a military background specifically in the intelligence industry and, most recently, as an educator for the US Army. Married to my beautiful wife Shania and we have an eight month old Winter Sofia Kimbrough keeping us company. I’m a foodie who loves video games, deer hunting, mowing the grass, and marvel movies! I look forward to my career in tech and dream of owning my own business one day!</p>
+        <p>Haustin comes from a military background specifically in the intelligence industry and, most recently, as an educator for the US Army. Married to his beautiful wife Shania, they have an eight month old daughter, Winter Sofia Kimbrough, keeping them company.<br/> He is a foodie who loves video games, deer hunting, mowing the grass, and marvel movies! He looks forward to his career in tech and dreams of owning his own business one day!</p>
       </div>
     </div>
   );
