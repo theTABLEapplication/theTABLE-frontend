@@ -11,7 +11,7 @@ class Login extends React.Component {
     return (
       <Card className='logincard' style={{ width: '18rem' }}>
         <Card.Body>
-          <Card.Title id="cardTitle">theTABLE</Card.Title>
+          <h1 id="loginCardTitle">theTABLE</h1>
           <img id="logoLogin" src={logo} />
           <LoginButton />
         </Card.Body>

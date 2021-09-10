@@ -8,9 +8,16 @@ nav Button {
   padding: 5px;
   transition: all 0.8s ease-in-out;
 }
+#loginCardTitle{
+font-size: 60px;
+font-family: 'Oswald', sans-serif;
+}
 
 #logoLogin {
   width: 200px;
+}
+#loginCardContainer{
+  margin-top: 20%;
 }
 
 .restedit {

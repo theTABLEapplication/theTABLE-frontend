@@ -3,12 +3,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #eeebe4;
+  height: 670px;
 }
 
 #profileDiv h1{
   font-family: 'Oswald', sans-serif;
   font-size: 55px;
-  margin-top: 5%;
 }
 
 #userProfileName{
