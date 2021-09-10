@@ -10,7 +10,7 @@ ReactDOM.render(
   <Auth0Provider
     domain='dev-1ofnhtfv.us.auth0.com'
     clientId='2acNQq9rETuf8NvwMYA7p8FaSC3BK83D'
-    redirectUri='https://cf301-thetable.herokuapp.com'
+    redirectUri='https://thetable301.netlify.app/'
   >
     <App />
   </Auth0Provider>,
