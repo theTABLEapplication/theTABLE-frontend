@@ -17,6 +17,7 @@ class MealModal extends Component {
   }
 
   render() {
+    console.log(this.props.mealArray);
     return (
       <>
         <Modal show={this.props.show} onHide={this.props.onClose}>
@@ -25,18 +26,30 @@ class MealModal extends Component {
           </Modal.Header>
           <Modal.Body>
             <Form onSubmit={this.handleMealSubmit}>
-              <Form.Group className="mb-3" controlId="formMeal">
-                <Form.Control type="text" placeholder="What Did You Eat?" />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formRecommend">
-                <Form.Check type="checkbox" label="Recommend?" />
-              </Form.Group>
-              <Button id="addDishButton" type="submit">ADD</Button>
+              <div id='modaltop'>
+                <div id='modaltopform'>
+                  <Form.Group className="mb-3" controlId="formMeal">
+                    <Form.Control type="text" placeholder="What Did You Eat?" />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formRecommend">
+                    <Form.Check type="checkbox" label="LOVED THIS! 🤩" />
+                  </Form.Group>
+                </div>
+                <Button id="addDishButton" type="submit">ADD</Button>
+              </div>
             </Form>
+            <div id='lovedmeals'>
+              <p>MY MEALS</p>
+              {this.props.mealArray.map((meal, idx) => {
+                return (
+                  <div className='fooditem' key={idx}>
+                    <p>{meal.name}</p>
+                    <p>{meal.like ? '🤩' : null}</p>
+                  </div>
+                );
+              })}
+            </div>
           </Modal.Body>
-          {/* <Modal.Footer>
-            <Button id="modalButton" onClick={this.props.onClose}>Close</Button>
-          </Modal.Footer> */}
         </Modal>
       </>
     );

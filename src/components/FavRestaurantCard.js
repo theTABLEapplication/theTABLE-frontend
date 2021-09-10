@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, Button, Accordion } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import '../css/FavRestCard.css';
 
 class FavRestaurantCard extends Component {
@@ -47,19 +47,6 @@ class FavRestaurantCard extends Component {
             <Button onClick={() => this.handleVisitCount(this.props.restaurant)}>CHECK-IN</Button>
           </div>
         </Card.Body>
-        <Accordion defaultActiveKey={this.props.index}>
-          <Accordion.Item eventKey={this.props.index}>
-            <Accordion.Header>Meals</Accordion.Header>
-            {this.props.restaurant.meals.map((meal, idx) => {
-              return (
-                <Accordion.Body key={idx}>
-                  {meal.name}
-                  {meal.like ? ':  RECOMMEND!' : null}
-                </Accordion.Body>
-              );
-            })}
-          </Accordion.Item>
-        </Accordion>
       </Card>
     );
   }

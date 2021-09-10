@@ -22,6 +22,7 @@ class Feed extends Component {
       favRestaurants: [],
       selectedRestaurant: {},
       selectedMealRestaurant: {},
+      mealArray: [],
     };
   }
 
@@ -70,6 +71,7 @@ class Feed extends Component {
   handleShowMealModal = (restaurant) => {
     this.setState({
       selectedMealRestaurant: restaurant,
+      mealArray: restaurant.meals,
       showMealModal: true,
     });
   };
@@ -102,6 +104,7 @@ class Feed extends Component {
       showMealModal: false,
       selectedRestarant: {},
       selectedMealRestaurant: {},
+      mealArray: [],
     });
   };
 
@@ -151,7 +154,7 @@ class Feed extends Component {
           : null
         }
         {this.state.selectedMealRestaurant ?
-          <MealModal show={this.state.showMealModal} onClose={this.handleCloseEditModal} handleGet={this.handleGet} selectedMealRestaurant={this.state.selectedMealRestaurant} handleMealSubmit={this.handleMealSubmit} />
+          <MealModal mealArray={this.state.mealArray} show={this.state.showMealModal} onClose={this.handleCloseEditModal} handleGet={this.handleGet} selectedMealRestaurant={this.state.selectedMealRestaurant} handleMealSubmit={this.handleMealSubmit} />
           : null
         }
         <div id='rescards'>

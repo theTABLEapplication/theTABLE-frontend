@@ -69,3 +69,45 @@ nav Button {
   width: 200px;
   font-size: 40px;
 }
+
+#modaltop{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+#modaltopform {
+  width: 75%;
+  background-color: #e2d9d4;
+  padding:10px;
+}
+
+#lovedmeals {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  color: #eeebe4;
+  background-color: #655C58;
+  margin:10px;
+  border-radius: 5px;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right:40px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+
+}
+
+.fooditem {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #A49790;
+  margin-top: 3px;
+  padding: 10px;
+}
+
+.fooditem p{
+  margin:0;
+}
