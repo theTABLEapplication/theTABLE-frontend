@@ -6,3 +6,104 @@
 .Card:hover {
   transform: scale(1.1);
 } */
+
+#restCardURL{
+  font-size: 15pt;
+  letter-spacing: .01em;
+  font-family: 'Oswald', sans-serif;
+  color:#DCD7CE;
+  transition: all 0.8s ease-in;
+}
+
+#restCardURL:hover{
+  font-size: 15pt;
+  font-weight: 700px;
+  letter-spacing: .01em;
+  color:#4E412C;
+}
+
+.card{
+  text-align: center;
+  background-color: #A49790;
+  opacity: 0.9;
+  margin: 10px;
+  width:450px;
+  height: 450px;
+  display:flex;
+  transition: all 0.8s ease-in-out;
+}
+
+.card img{
+  overflow: auto;
+  transition: all 0.8s ease-in-out;
+}
+
+.card button{
+  background-color: #332F2D;
+  color: #e2d9d4;
+  border: #332F2D;
+  font-family: 'Oswald', sans-serif;
+  height: 50px;
+  width: 75px;
+  padding: 5px;
+  transition: all 0.8s ease-in-out;
+}
+
+.card button:hover{
+  background-color: #dcd7ce;
+  color: #332F2D;
+  transition: all 0.5s ease-in-out;
+}
+
+.card button:focus{
+  background-color: #dcd7ce;
+  color: #332F2D;
+  box-shadow: none;
+}
+
+#addMealButton{
+  background-color: #332F2D;
+  color: #e2d9d4;
+  transition: all 0.8s ease-in-out;
+}
+
+#addMealButton:hover{
+  background-color: #dcd7ce;
+  color: #332F2D;
+}
+
+#editMealButton{
+  background-color: #dcd7ce;
+  color: #332F2D;
+  transition: all 0.8s ease-in-out;
+}
+
+#editMealButton:hover{
+  background-color: #332F2D;
+  color: #e2d9d4;
+}
+
+#cardTitle{
+  font-family: 'Oswald', sans-serif;
+  font-size: 35px;
+  color: #181615 ;
+} 
+
+#cardAddress{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #655C58;
+}
+
+.visitcount.card-text{
+  font-size: 30px;
+  text-align: center;
+  color: #4E412C;
+}
+
+.card-body{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
