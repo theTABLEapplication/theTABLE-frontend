@@ -22,7 +22,7 @@ class FavRestaurantCard extends Component {
   render() {
     return (
 
-      <Card className='card' key={this.props.index}>
+      <Card id="favRestCard" className='card' key={this.props.index}>
         <Card.Img
           variant="top"
           src={this.props.restaurant.image_url}
@@ -30,15 +30,16 @@ class FavRestaurantCard extends Component {
           title={this.props.restaurant.name} />
         <Card.Body>
           <div className='restedit'>
-            <Button onClick={() => this.props.showMealModal(this.props.restaurant)}>+MEAL</Button>
-            <Button onClick={() => this.props.showEditModal(this.props.restaurant)}>EDIT</Button>
+            <Button id="addMealButton" onClick={() => this.props.showMealModal(this.props.restaurant)}>+MEAL</Button>
+            <Button id="editMealButton" onClick={() => this.props.showEditModal(this.props.restaurant)}>EDIT</Button>
           </div>
           <div className='resttext'>
-            <Card.Title>{this.props.restaurant.name}</Card.Title>
-            <div>
+            <Card.Title id="cardTitle">{this.props.restaurant.name}</Card.Title>
+            <div id="cardAddress">
               <Card.Text>{this.props.restaurant.location[0]}</Card.Text>
               <Card.Text>{this.props.restaurant.location[1]}</Card.Text>
             </div>
+            <a id="restCardURL" href={this.props.restaurant.url} target='_blank'>More Info</a>
           </div>
           <div className='restvisits'>
             <p>VISITS</p>

@@ -4,6 +4,8 @@ import Image from 'react-bootstrap/Image';
 import Sarah from '../assets/sarahphoto.jpg';
 import Justin from '../assets/justin-photo.jpg';
 import email from '../assets/emailIcon.png';
+import Chris from '../assets/chris-photo.jpg';
+import Haustin from '../assets/haustin-photo.jpg';
 import gitHub from '../assets/gitHubIcon.png';
 import linkedIn from '../assets/linkedInLogo.png';
 import '../css/AboutUs.css';
@@ -45,7 +47,7 @@ const AboutUs = () => {
       </div>
       <div key={3} id="chrisaboutus">
         <h1>Christopher Burk</h1>
-        <Image id="chrisProfileImage" src='' alt={'Chris Burk'} roundedCircle />
+        <Image id="chrisProfileImage" src={Chris} alt={'Chris Burk'} roundedCircle />
         <div id="chrisLinks">
           <a id="chrisLinkedIn" href='https://www.linkedin.com/in/christopherburk/'  target='_blank'>
             <img alt="linkedIn" src={linkedIn} />
@@ -61,7 +63,7 @@ const AboutUs = () => {
       </div>
       <div key={4} id="haustinaboutus">
         <h1>Haustin Kimbrough</h1>
-        <Image id="haustinProfileImage" src='' alt={'Haustin Kimbrough'} roundedCircle />
+        <Image id="haustinProfileImage" src={Haustin} alt={'Haustin Kimbrough'} roundedCircle />
         <div id="haustinLinks">
           <a id="haustinLinkedIn" href='https://www.linkedin.com/in/haustin-kimbrough/'  target='_blank'>
             <img alt="linkedIn" src={linkedIn} />
@@ -73,7 +75,7 @@ const AboutUs = () => {
             <img alt="email" src={email} />
           </a>
         </div>
-        <p>Bio Here</p>
+        <p>I come from a military background specifically in the intelligence industry and, most recently, as an educator for the US Army. Married to my beautiful wife Shania and we have an eight month old Winter Sofia Kimbrough keeping us company. I’m a foodie who loves video games, deer hunting, mowing the grass, and marvel movies! I look forward to my career in tech and dream of owning my own business one day!</p>
       </div>
     </div>
   );

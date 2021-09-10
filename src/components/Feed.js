@@ -155,7 +155,7 @@ class Feed extends Component {
           : null
         }
         <div id='rescards'>
-          {this.state.favRestaurants.length ? <FavRestaurantCards showMealModal={this.handleShowMealModal} onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} stateEditModal={this.state.showEditModal} closeEditModal={this.handleCloseEditModal} showEditModal={this.handleShowEditModal} /> : null}
+          {this.state.favRestaurants.length ? (<div id="restaurantCardContainer"><FavRestaurantCards showMealModal={this.handleShowMealModal} onVisit={this.onVisit} favRestaurants={this.state.favRestaurants} stateEditModal={this.state.showEditModal} closeEditModal={this.handleCloseEditModal} showEditModal={this.handleShowEditModal} /></div>) : null}
         </div>
       </div>
     );
