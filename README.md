@@ -1,49 +1,54 @@
-# theTABLE
+
+<div align="center">
+<img width="200px" src="./src/assets/logo.png">
+</div>
+
+<h1 align="center">theTABLE</h1> 
 
 ## Authors: Sarah Creager, Justin Hamerly, Christopher Burk, Haustin Kimbrough
 
 ## Version: 1.1.0
 
-## Description
+## About
 
-theTABLE is an app that allows you to track the restaurants you have gone to and your recommended items. You will also be able restaurants on your favorites feed and personal map. The app will track your most frequented restaurants as well as offer reminders of your favorite food items. It is an info feed for foodies and hungry people who need some inspiration on where to go tonight.
+`theTABLE` is an app that tracks your restaurants, recommended meals, and the number of visits. It displays a feed with detailed restaurant information and a personalized, dynamic worldwide map. This app is integrated with Auth0 login.
 
-## Resources
+## Problem Domain
 
-- _[ReactJS](https://reactjs.org/)_
-- _[React Bootstrap](https://react-bootstrap.github.io/)_
-- _[mapbox](https://docs.mapbox.com/)_
-- _[NodeJS](https://nodejs.org/en/)_
-- _[Yelp API](https://www.yelp.com/developers/documentation/v3)_
-- _[Miro](https://miro.com/)_
-- _[Trello](https://trello.com/)_
-- _[Unsplash](https://unsplash.com/)_
-- _[W3Schools](https://www.w3schools.com/)_
-- _[MDN Web Docs](https://developer.mozilla.org/en-US/)_
-- _[Stack Overflow](https://stackoverflow.com/)_
+You know that feeling when you're trying to pick a place to eat, but you're too hungry to make a decision? We know the feeling all too well and so we set out on a mission to simply the process for you. `theTABLE` alleviates the stress of planning your next meal by tracking your favorite restaurants and recommended items. 
 
-## Contributions
+Our app displays a personalized feed with all your favorite spots, along with eye-catching visuals and a dynamic worldwide map. It is an info feed for foodies and hungry people who need some inspiration on where to go tonight. No more hangry arguments over where to eat or settling for the same place the third time this week. Come on over to `theTABLE`. We've got you covered.
 
-- _[JB Tellez](https://www.linkedin.com/in/jb-tellez/)_
-- _[Hexx King](https://www.linkedin.com/in/hexx-king/)_
-- _[Chance Harmon](https://www.linkedin.com/in/chance-harmon/)_
-- _[Kristian Esvelt](https://www.linkedin.com/in/kristianesvelt/)_
-- _[Audrey Patterson](https://www.linkedin.com/in/audrey-patterson31/)_
-- _[JP Jones](https://www.linkedin.com/in/jp-jones/)_
-- _[Joe Pennock](https://www.linkedin.com/in/joepennock/)_
-- And all the other TAs who helped us along the way
+## Project Overview
 
-## Domain Model
+| Title      | Languages/Frameworks/Libraries/Tools |
+| ----------- | ----------- |
+| Frontend | React, Netlify, React-Bootstrap, CSS3 |
+| Backend | Node.js, Express, Mongoose, Heroku, MongoDB Atlas |
+| Integrations | Auth0, Yelp Business Search API, MapBox GL JS, MongoDB Compass |
 
-![domainmodel](./img/DomainModel.png)
+## Installation
 
-## Wireframe
+1. `npm install`  
+    * axios
+    * cors
+    * dotenv
+    * express
+    * jsonwebtoken
+    * jwks-rsa
+    * mongoose
 
-![wireframe](./img/wireframe.png)
 
-## Database Schema Diagram
+2. `npm start`
 
-![Database Schema Diagram](./img/Database-Schema-Diagram.png)
+*sample .env*
+``` 
+REACT_APP_SERVER_URL=placeURLHere
+
+REACT_APP_HEROKU_URL=placeURLHere
+
+REACT_APP_MAPBOX_TOKEN=placeTokenHere
+```
 
 ## User Stories
 
@@ -101,7 +106,50 @@ Acceptance:
 
 - The map will be scrollable, zooming in and out.
 
-### FUTURE FEATURE: ADD A MAP THAT DISPLAYS FRIEND'S VISITED RESTAURANTS
+## Domain Model
+
+![domainmodel](./img/DomainModel.png)
+
+## Wireframe
+
+![wireframe](./img/wireframe.png)
+
+## Database Schema Diagram
+
+![Database Schema Diagram](./img/Database-Schema-Diagram.png)
+
+
+## Resources and Contributions
+
+### Sites
+
+* [Miro](https://miro.com/login/)
+* [Unsplash](https://unsplash.com/)
+* [Trello](https://trello.com/)
+* [Stack Overflow](stackoverflow.com)
+* [Mongoose Docs](https://mongoosejs.com/docs/api.html)
+* [MDN Docs](https://developer.mozilla.org/en-US/)
+* [W3 Schools](https://www.w3schools.com/)
+* [Node JS Docs](https://nodejs.org/en/docs/)
+* [Yelp API](https://www.yelp.com/developers)
+* [Mapbox GL](https://www.mapbox.com/)
+* [ReactJS](https://reactjs.org/)
+* [React Bootstrap](https://react-bootstrap.github.io/)
+
+### Advisors
+
+- _[JB Tellez](https://www.linkedin.com/in/jb-tellez/)_
+- _[Hexx King](https://www.linkedin.com/in/hexx-king/)_
+- _[Chance Harmon](https://www.linkedin.com/in/chance-harmon/)_
+- _[Kristian Esvelt](https://www.linkedin.com/in/kristianesvelt/)_
+- _[Audrey Patterson](https://www.linkedin.com/in/audrey-patterson31/)_
+- _[JP Jones](https://www.linkedin.com/in/jp-jones/)_
+- _[Joe Pennock](https://www.linkedin.com/in/joepennock/)_
+- And all the other TAs who helped us along the way
+
+## Future Implementations
+
+### ADD A MAP THAT DISPLAYS FRIEND'S VISITED RESTAURANTS
 
 As a user, I want to view the restaurants my friends have already visited so I can easily make a selection if I want to eat somewhere new recommended from a trusted source.
 
