@@ -165,7 +165,7 @@ Acceptance:
 
 - The pins will display in a unique color for friend's selections.
 
-### FUTURE FEATURE: ADD A MAP THAT DISPLAYS NEARBY RESTAURANTS
+### ADD A MAP THAT DISPLAYS NEARBY RESTAURANTS
 
 As a user, I want to view all the restaurants nearby so I can easily make a selection if I want to explore somewhere new.
 
@@ -181,7 +181,7 @@ Acceptance:
 
 - The pins will display in a unique color.
 
-### FUTURE FEATURE: MAP TOGGLES BETWEEN VIEWS
+### MAP TOGGLES BETWEEN VIEWS
 
 As a user, I want to toggle between my restaurant pins, my friend's pins, and all other nearby restaurant pins on the map so I can easily make a selection based off of each filtered view.
 
