@@ -1,8 +1,11 @@
 #navBarFooter {
   background-color: #181615;
-  display: flex;
+  position:fixed;
+  text-align: center;
+  bottom: 0;
   justify-content: space-evenly;
-  height: 200px;
+  height: 50px;
+  width:100%;
 }
 
 #navBarFooterTitle{
